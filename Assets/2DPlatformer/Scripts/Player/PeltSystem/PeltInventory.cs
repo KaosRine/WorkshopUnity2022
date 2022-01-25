@@ -13,5 +13,10 @@ namespace GSGD2.Player
         {
             _pelts.Add(newPelt);
         }
+
+        public void RemovePelt(Pelt removePelt)
+        {
+            _pelts.Remove(removePelt);
+        }
     }
 }

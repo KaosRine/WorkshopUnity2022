@@ -3,38 +3,58 @@ namespace GSGD2.Player
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using GSGD2.Gameplay;
 
-
-    [CreateAssetMenu(menuName = "GameSup/Pelts", fileName = "Pelt")]
-    public class Pelt : ScriptableObject
+    [CreateAssetMenu(menuName = "GameSup/Pelts", fileName = "Pelts")]
+    public class Pelt : PickupCommand
     {
-        [SerializeField]
-        private bool _enableWallGrab = false;
+        private enum PeltType
+        {
+            None,
+            Wolf,
+            Squirrel
+        }
 
         [SerializeField]
-        private bool _enableGlide = false;
+        private PeltType _pelt = 0;
 
-        protected virtual bool ApplyPelt()
+        private PeltInventory _peltInventory = null;
+
+        protected override bool ApplyPickup(ICommandSender from)
         {
             var player = LevelReferences.Instance.Player;
+            LevelReferences.Instance.PlayerReferences.TryGetPeltInventory(out _peltInventory);
 
-            if (_enableWallGrab == true)
+            switch (_pelt)
             {
-                player.EnableWallGrab(true);
-            }
-            else
-            {
-                player.EnableWallGrab(false);
+                case PeltType.None:
+                    {
+                        player.EnableWallGrab(false);
+                        player.EnableGlide(false);
+
+                        //TODO: Change current pelt enum
+                    }
+                    break;
+                case PeltType.Wolf:
+                    {
+                        player.EnableWallGrab(true);
+                        player.EnableGlide(false);
+
+                        _peltInventory.AddPelt(this);
+                    }
+                    break;
+                case PeltType.Squirrel:
+                    {
+                        player.EnableWallGrab(false);
+                        player.EnableGlide(true);
+
+                        _peltInventory.AddPelt(this);
+                    }
+                    break;
+                default:
+                    break;
             }
 
-            if (_enableGlide == true)
-            {
-                player.EnableGlide(true);
-            }
-            else
-            {
-                player.EnableGlide(false);
-            }
             return true;
         }
     }
