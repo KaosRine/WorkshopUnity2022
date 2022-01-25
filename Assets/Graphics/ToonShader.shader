@@ -3,7 +3,7 @@ Shader "Unlit/ToonShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Brightness("Brightness". Range(0.1)) = 0.3
+        _Brightness("Brightness", Range(0,1)) = 0.3
     }
     SubShader
     {
