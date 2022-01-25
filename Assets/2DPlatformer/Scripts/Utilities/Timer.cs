@@ -56,6 +56,13 @@
 			StateChanged?.Invoke(this, _currentState);
 		}
 
+		public void Stop()
+        {
+			ResetTimeElapsed();
+			_currentState = State.Stopped;
+			StateChanged?.Invoke(this, _currentState);
+        }
+
 		public bool Update()
 		{
 			switch (_currentState)
