@@ -3,6 +3,7 @@ Shader "Unlit/ToonShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _Brightness("Brightness". Range(0.1)) = 0.3
     }
     SubShader
     {
@@ -36,6 +37,7 @@ Shader "Unlit/ToonShader"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float _Brightness;
 
             float Toon(float3 normal, float3 lightDir)
             {
@@ -59,7 +61,7 @@ Shader "Unlit/ToonShader"
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-            col *= Toon(i.worldNormal, _WorldSpaceLightPos0.xyz);
+                col *= Toon(i.worldNormal, _WorldSpaceLightPos0.xyz)+_Brightness;
                 return col;
             }
             ENDCG
