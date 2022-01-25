@@ -15,7 +15,8 @@
         {
             Jump,
             Dash,
-            WallGrab
+            WallGrab,
+            Glide
         }
 
         // TODO AL : add modifiers : SetAllowedForce, 
@@ -67,6 +68,14 @@
                         if (_modifier == Modifier.Enable || _modifier == Modifier.Disable)
                         {
                             player.EnableWallGrab(_modifier == Modifier.Enable ? true : false);
+                        }
+                    }
+                    break;
+                case Ability.Glide:
+                    {
+                        if (_modifier == Modifier.Enable || _modifier == Modifier.Disable)
+                        {
+                            player.EnableGlide(_modifier == Modifier.Enable ? true : false);
                         }
                     }
                     break;

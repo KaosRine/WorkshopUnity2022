@@ -165,6 +165,10 @@ namespace GSGD2.Player
 		[SerializeField]
 		private bool _resetWallGrabDisableDurationWhenDashing = true;
 
+		[Header("Glide")]
+		[SerializeField]
+		private bool _enableGlide = false;
+
 		[Header("Bump")]
 		[SerializeField]
 		private float _durationToDisableControlDuringBump = 0.5f;
@@ -256,6 +260,7 @@ namespace GSGD2.Player
 		public bool HasAWallBehindCharacter => _characterCollision.HasAWallInFrontOfCharacter;
 		public bool HasASlopeInFrontOfOrBehindCharacter => _characterCollision.HasASlopeInFrontOfOrBehindCharacter;
 		public bool isWallGrabEnabled => _enableWallGrab;
+		public bool isGlideEnabled => _enableGlide;
 
 		#endregion Properties
 
@@ -312,6 +317,11 @@ namespace GSGD2.Player
 		public void EnableWallGrab(bool isEnabled)
         {
 			_enableWallGrab = isEnabled;
+        }
+
+		public void EnableGlide(bool isEnabled)
+        {
+			_enableGlide = isEnabled;
         }
 
 		public void AddMaximumAllowedForceToJump(int toAdd)
