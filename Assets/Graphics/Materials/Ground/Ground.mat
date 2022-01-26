@@ -7,14 +7,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StylizedWater
-  m_Shader: {fileID: -6465566751694194690, guid: c6a4e3c015a94524e9e249a5a27c0aea, type: 3}
+  m_Name: Ground
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -76,13 +77,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_0788fd0af20d47f6837bde6325f45822: 1
-    - Vector1_4681c48935eb4333832105ae764b29ef: 0.05
-    - Vector1_509999f087ca4c5ea40b878ceab33472: 1
-    - Vector1_6dc505e8202d4771a672cfd0b05b12a5: 100
-    - Vector1_e3f4d383235946468978339cd6195a41: 1.1
-    - Vector1_eb41bd68602e4ce3b482108159f8598d: 2
-    - Vector1_f7b930eb8a8a429d8692d83a84f91652: 2
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -110,15 +104,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_0af827ee922b47368d60a376fba3ef5f: {r: 1, g: 0, b: 0, a: 0.5803922}
-    - Color_337cf9aa3383424883b6ad34fea9ae94: {r: 0.0754717, g: 0.08079914, b: 0.3018868, a: 0.12941177}
-    - Color_f312a27b085d4c52a69fd58327cc6ec6: {r: 0.15098791, g: 0.8207547, b: 0.76580715, a: 0.23529412}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &4827255480370314763
+--- !u!114 &8422535522177591183
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
