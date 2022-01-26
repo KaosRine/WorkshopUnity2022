@@ -27,6 +27,7 @@ namespace GSGD2.Player
 		[SerializeField] private PlayerDamageFeedbackHandler _playerDamageFeedbackHandler = null;
 		[SerializeField] private CameraAimController _cameraAimController = null;
 		[SerializeField] private PlayerControllerDeactivator _playerControllerActivator = null;
+		[SerializeField] private PeltInventory _peltInventory = null;
 
 		public bool TryGetRigidbody(out Rigidbody rigidbody)
 		{
@@ -134,6 +135,12 @@ namespace GSGD2.Player
         {
 			playerControllerDeactivator = _playerControllerActivator;
 			return playerControllerDeactivator != null;
+        }
+
+		public bool TryGetPeltInventory(out PeltInventory peltInventory)
+        {
+			peltInventory = _peltInventory;
+			return peltInventory != null;
         }
 	}
 }

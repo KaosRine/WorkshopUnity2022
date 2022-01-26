@@ -53,7 +53,7 @@ namespace GSGD2.Player
 
         private void PlayerControllerOnGlidePerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (_usableInState.HasFlag(_cubeController.CurrentState) && _isGliding == false)
+            if (_usableInState.HasFlag(_cubeController.CurrentState) && _isGliding == false && _cubeController.isGlideEnabled == true)
             {
                 _isGliding = true;
                 _cubeController.EnableJump(false);
