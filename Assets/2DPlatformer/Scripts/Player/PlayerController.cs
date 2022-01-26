@@ -24,6 +24,8 @@ namespace GSGD2.Player
 		private const string PAUSE_MENU_ACTION_NAME = "PauseMenu";
 		private const string GLIDE_ACTION_NAME = "Glide";
 		private const string STOP_GLIDE_ACTION_NAME = "StopGlide";
+		private const string PELT_INVENTORY_ACTION_NAME = "PeltInventory";
+		private const string SWITCH_PELT_ACTION_NAME = "SwitchPelt";
 
 		[SerializeField]
 		private InputActionMapWrapper _inputActionMapWrapper;
@@ -44,7 +46,9 @@ namespace GSGD2.Player
 		private InputAction _groundSmashInputAction = null;
 		private InputAction _pauseMenuInputAction = null;
 		private InputAction _glideInputAction = null;
-		private InputAction _stopGlide_inputAction = null;
+		private InputAction _stopGlideInputAction = null;
+		private InputAction _peltInventoryInputAction = null;
+		private InputAction _switchPeltInputAction = null;
 
 		public bool UseMouseForLookDirection => _useMouseForLookDirection;
 		public float HorizontalMove => _horizontalMoveInputAction.ReadValue<float>();
@@ -65,6 +69,8 @@ namespace GSGD2.Player
 		public event InputEvent PauseMenuPerformed = null;
 		public event InputEvent GlidePerformed = null;
 		public event InputEvent StopGlidePerformed = null;
+		public event InputEvent PeltInventoryPerformed = null;
+		public event InputEvent SwitchPeltPerformed = null;
 
 		private void OnEnable()
 		{
@@ -133,13 +139,24 @@ namespace GSGD2.Player
 				_glideInputAction.performed += GlideInputAction_performed;
             }
 
-            if (_inputActionMapWrapper.TryFindAction(STOP_GLIDE_ACTION_NAME, out _stopGlide_inputAction, true) == true)
+            if (_inputActionMapWrapper.TryFindAction(STOP_GLIDE_ACTION_NAME, out _stopGlideInputAction, true) == true)
             {
-                _stopGlide_inputAction.performed -= StopGlideInputAction_performed;
-                _stopGlide_inputAction.performed += StopGlideInputAction_performed;
+                _stopGlideInputAction.performed -= StopGlideInputAction_performed;
+                _stopGlideInputAction.performed += StopGlideInputAction_performed;
+			}
+
+            if (_inputActionMapWrapper.TryFindAction(PELT_INVENTORY_ACTION_NAME, out _peltInventoryInputAction, true) == true)
+            {
+                _peltInventoryInputAction.performed -= PeltInventoryInputAction_performed;
+                _peltInventoryInputAction.performed += PeltInventoryInputAction_performed;
+			}
+
+            if (_inputActionMapWrapper.TryFindAction(SWITCH_PELT_ACTION_NAME, out _switchPeltInputAction, true) == true)
+            {
+                _switchPeltInputAction.performed -= SwitchPeltInputAction_performed;
+                _switchPeltInputAction.performed += SwitchPeltInputAction_performed;
 			}
 		}
-
 
         private void OnDisable()
 		{
@@ -157,7 +174,9 @@ namespace GSGD2.Player
 			_groundSmashInputAction.Disable();
 			_pauseMenuInputAction.Disable();
 			_glideInputAction.Disable();
-			_stopGlide_inputAction.Disable();
+			_stopGlideInputAction.Disable();
+			_peltInventoryInputAction.Disable();
+			_switchPeltInputAction.Disable();
 
 			_jumpInputAction.performed -= JumpInputAction_performed;
 			_dashInputAction.performed -= DashInputAction_performed;
@@ -169,7 +188,9 @@ namespace GSGD2.Player
 			_groundSmashInputAction.performed -= GroundSmashInputAction_performed;
 			_pauseMenuInputAction.performed -= PauseMenuInputAction_performed;
 			_glideInputAction.performed -= GlideInputAction_performed;
-			_stopGlide_inputAction.performed -= GlideInputAction_performed;
+			_stopGlideInputAction.performed -= GlideInputAction_performed;
+			_peltInventoryInputAction.performed -= PeltInventoryInputAction_performed;
+			_switchPeltInputAction.performed -= SwitchPeltInputAction_performed;
 		}
 
 		private void JumpInputAction_performed(InputAction.CallbackContext obj)
@@ -224,6 +245,16 @@ namespace GSGD2.Player
         private void StopGlideInputAction_performed(InputAction.CallbackContext obj)
         {
 			StopGlidePerformed?.Invoke(this, obj);
+        }
+
+        private void PeltInventoryInputAction_performed(InputAction.CallbackContext obj)
+        {
+			PeltInventoryPerformed?.Invoke(this, obj);
+        }
+
+        private void SwitchPeltInputAction_performed(InputAction.CallbackContext obj)
+        {
+			SwitchPeltPerformed?.Invoke(this, obj);
         }
 	}
 }

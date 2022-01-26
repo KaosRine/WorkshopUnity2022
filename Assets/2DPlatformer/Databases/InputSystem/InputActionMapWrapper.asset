@@ -129,6 +129,22 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: PeltInventory
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 8eb77aab-f904-48ed-8751-389dd4ecd171
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: SwitchPelt
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: b6478e32-c280-4881-a870-d18282d4a7dd
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: b82491d4-813d-4be0-bea8-2217def02fb7
@@ -385,4 +401,20 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: StopGlide
+      m_Flags: 0
+    - m_Name: 
+      m_Id: ea77f944-c89c-4efb-9ea3-5646f3fa4eb2
+      m_Path: <Keyboard>/i
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: PeltInventory
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 422b81c6-3af3-462d-beec-dee08bdf1ae7
+      m_Path: <Keyboard>/p
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: SwitchPelt
       m_Flags: 0
