@@ -19,6 +19,7 @@ namespace GSGD2.Player
         [SerializeField]
         private PeltType _pelt = 0;
 
+        private CubeController _cubeController = null;
         private PeltInventory _peltInventory = null;
         private PeltInventoryMenu _peltInventoryMenu = null;
 
@@ -70,6 +71,8 @@ namespace GSGD2.Player
         public void Apply()
         {
             var player = LevelReferences.Instance.Player;
+            var glider = player.GetComponentInParent<ExampleGlider>();
+            LevelReferences.Instance.PlayerReferences.TryGetCubeController(out _cubeController);
 
             switch (_pelt)
             {
@@ -83,12 +86,20 @@ namespace GSGD2.Player
                     {
                         player.EnableWallGrab(true);
                         player.EnableGlide(false);
+
+                        _cubeController.ChangeState(CubeController.State.Falling);
+                        glider.SetIsGliding(false);
+                        _cubeController.EnableJump(true);
+                        _cubeController.ForceCheckGround();
                     }
                     break;
                 case PeltType.Squirrel:
                     {
                         player.EnableWallGrab(false);
                         player.EnableGlide(true);
+
+                        _cubeController.ChangeState(CubeController.State.Falling);
+                        _cubeController.ForceCheckGround();
                     }
                     break;
                 default:
