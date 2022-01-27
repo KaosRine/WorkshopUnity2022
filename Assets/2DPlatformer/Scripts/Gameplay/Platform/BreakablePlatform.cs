@@ -9,34 +9,57 @@ namespace GSGD2.Gameplay
     public class BreakablePlatform : MonoBehaviour
     {
         [SerializeField]
+        private MeshRenderer _mesh = null;
+
+        [SerializeField]
+        private Collider _collider = null;
+
+        [SerializeField]
+        private Collider _trigger = null;
+
+        [SerializeField]
         private float _timeBeforeDestroy = 1f;
 
-        private Timer _timer = new Timer();
+        [SerializeField]
+        private float _respawnTime = 1f;
+
+        private Timer _destroyTimer = new Timer();
+        private Timer _respawnTimer = new Timer();
 
         [SerializeField]
 
         private void Awake()
         {
-            _timer.ForceFinishState();
+            _destroyTimer.ForceFinishState();
+            _respawnTimer.ForceFinishState();
         }
 
         private void OnEnable()
         {
-            _timer.StateChanged -= TimeBeforeDestroyOnStateChanged;
-            _timer.StateChanged += TimeBeforeDestroyOnStateChanged;
+            _destroyTimer.StateChanged -= DestroyTimerOnStateChanged;
+            _respawnTimer.StateChanged -= RespawnTimerOnStateChanged;
+
+            _destroyTimer.StateChanged += DestroyTimerOnStateChanged;
+            _respawnTimer.StateChanged += RespawnTimerOnStateChanged;
         }
 
 
         private void OnDisable()
         {
-            _timer.StateChanged -= TimeBeforeDestroyOnStateChanged;
+            _destroyTimer.StateChanged -= DestroyTimerOnStateChanged;
+            _respawnTimer.StateChanged -= RespawnTimerOnStateChanged;
         }
 
         private void Update()
         {
-            if (_timer.IsRunning == true)
+            if (_destroyTimer.IsRunning == true)
             {
-                _timer.Update();
+                _destroyTimer.Update();
+            }
+
+            if (_respawnTimer.IsRunning == true)
+            {
+                _respawnTimer.Update();
             }
         }
 
@@ -45,7 +68,7 @@ namespace GSGD2.Gameplay
             PlayerController playerController = other.GetComponentInParent<PlayerController>();
             if (playerController != null)
             {
-                _timer.Start(_timeBeforeDestroy);
+                _destroyTimer.Start(_timeBeforeDestroy);
             }
         }
 
@@ -54,15 +77,29 @@ namespace GSGD2.Gameplay
             PlayerController playerController = other.GetComponentInParent<PlayerController>();
             if (playerController != null)
             {
-                _timer.Stop();
+                _destroyTimer.Stop();
             }
         }
 
-        private void TimeBeforeDestroyOnStateChanged(Timer timer, Timer.State state)
+        private void DestroyTimerOnStateChanged(Timer timer, Timer.State state)
         {
             if (state == Timer.State.Finished)
             {
-                Destroy(this.gameObject);
+                _mesh.enabled = false;
+                _collider.enabled = false;
+                _trigger.enabled = false;
+
+                _respawnTimer.Start(_respawnTime);
+            }
+        }
+
+        private void RespawnTimerOnStateChanged(Timer timer, Timer.State state)
+        {
+            if (state == Timer.State.Finished)
+            {
+                _mesh.enabled = true;
+                _collider.enabled = true;
+                _trigger.enabled = true;
             }
         }
     }

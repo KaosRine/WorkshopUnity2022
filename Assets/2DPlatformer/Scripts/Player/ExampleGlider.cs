@@ -28,6 +28,8 @@ namespace GSGD2.Player
         private PlayerController _playerController = null;
         private CharacterCollision _characterCollision = null;
 
+        public bool IsGliding => _isGliding;
+
         private void Awake()
         {
             _playerReferences.TryGetRigidbody(out _rigidbody);
@@ -94,6 +96,7 @@ namespace GSGD2.Player
                     _cubeController.ChangeState(CubeController.State.Falling);
                     _cubeController.ForceCheckGround();
                     _isGliding = false;
+                    _cubeController.EnableJump(true);
                 }
 
                 _cubeController.ForceCheckGround();
