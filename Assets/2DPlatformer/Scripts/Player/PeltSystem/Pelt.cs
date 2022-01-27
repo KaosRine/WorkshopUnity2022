@@ -26,9 +26,9 @@ namespace GSGD2.Player
 
         protected override bool ApplyPickup(ICommandSender from)
         {
-            var player = LevelReferences.Instance.Player;
+            //var player = LevelReferences.Instance.Player;
             LevelReferences.Instance.PlayerReferences.TryGetPeltInventory(out _peltInventory);
-            _peltInventoryMenu = LevelReferences.Instance.UIManager.PeltInventoryMenu;
+            /*_peltInventoryMenu = LevelReferences.Instance.UIManager.PeltInventoryMenu;
 
             switch (_pelt)
             {
@@ -60,16 +60,16 @@ namespace GSGD2.Player
                     break;
                 default:
                     break;
-            }
-
+            }*/
+            _peltInventory.AddPelt(this);
             return true;
         }
+
+
 
         public void Apply()
         {
             var player = LevelReferences.Instance.Player;
-            LevelReferences.Instance.PlayerReferences.TryGetPeltInventory(out _peltInventory);
-            _peltInventoryMenu = LevelReferences.Instance.UIManager.PeltInventoryMenu;
 
             switch (_pelt)
             {
@@ -77,31 +77,31 @@ namespace GSGD2.Player
                     {
                         player.EnableWallGrab(false);
                         player.EnableGlide(false);
-
-                        //TODO: Change current pelt enum
                     }
                     break;
                 case PeltType.Wolf:
                     {
                         player.EnableWallGrab(true);
                         player.EnableGlide(false);
-
-                        _peltInventory.AddPelt(this);
-                        _peltInventoryMenu.WolfIcon.enabled = true;
                     }
                     break;
                 case PeltType.Squirrel:
                     {
                         player.EnableWallGrab(false);
                         player.EnableGlide(true);
-
-                        _peltInventory.AddPelt(this);
-                        _peltInventoryMenu.SquirrelIcon.enabled = true;
                     }
                     break;
                 default:
                     break;
             }
+        }
+
+        public void ResetMovementAbilities()
+        {
+            var player = LevelReferences.Instance.Player;
+
+            player.EnableWallGrab(false);
+            player.EnableGlide(false);
         }
     }
 }

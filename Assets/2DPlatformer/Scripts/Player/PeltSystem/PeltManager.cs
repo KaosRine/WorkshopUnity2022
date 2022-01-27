@@ -69,11 +69,13 @@ namespace GSGD2.Player
                     case Pelt.PeltType.Wolf:
                         {
                             _peltInventoryManager.UnequipPelt(equippedPelt, Pelt.PeltType.Wolf);
+                            equippedPelt.ResetMovementAbilities();
                         }
                         break;
                     case Pelt.PeltType.Squirrel:
                         {
                             _peltInventoryManager.UnequipPelt(equippedPelt, Pelt.PeltType.Squirrel);
+                            equippedPelt.ResetMovementAbilities();
                         }
                         break;
                     default:
