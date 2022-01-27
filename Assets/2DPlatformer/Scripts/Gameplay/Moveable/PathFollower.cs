@@ -19,14 +19,25 @@ namespace GSGD2.Gameplay
 
         private bool _isReverse = false;
 
+        private EnemyStateManager _enemyStateManager = null;
+
+        private void Awake()
+        {
+            _enemyStateManager = GetComponentInParent<EnemyStateManager>();
+        }
+
         private void Update()
         {
             // Get Next destination ?
             // Check if below threshold ?
             // if so, getnextdistionat
             // if not, Move to 
-            Vector3 nextWaypoint = TryGetNextWaypoint();
-            MoveToNextWaypoint(nextWaypoint);
+            if (_enemyStateManager.CurrentState == EnemyStateManager.EnemyState.Patrolling)
+            {
+                Vector3 nextWaypoint = TryGetNextWaypoint();
+                RotateToNextWaypoint(nextWaypoint);
+                MoveToNextWaypoint(nextWaypoint);
+            }
         }
 
         // Recursive function
@@ -62,6 +73,12 @@ namespace GSGD2.Gameplay
                 }
             }
             return nextWaypoint;
+        }
+
+        private void RotateToNextWaypoint(Vector3 nextWaypoint)
+        {
+            Vector3 direction = nextWaypoint - transform.position;
+            transform.rotation = Quaternion.LookRotation(direction);
         }
 
         private void MoveToNextWaypoint(Vector3 nextWaypoint)

@@ -126,5 +126,10 @@ namespace GSGD2.Player
                 _rigidbody.velocity = gravityVelocity;
             }
         }
+
+        public void SetIsGliding(bool isGliding)
+        {
+            _isGliding = isGliding;
+        }
     }
 }
