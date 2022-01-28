@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Water1
-  m_Shader: {fileID: 4800000, guid: d18edbe58d150364ab6723b1e42c208b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 296ab29ffa8d33a40b560715286fe0eb, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -64,6 +64,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureWater2:
+        m_Texture: {fileID: 2800000, guid: ab56138dc7291694c9baa814049ad420, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Water_previewjpgC878A51E2B8445CA85CB75E5BC88EEC8Large:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Water_previewjpgC878A51E2B8445CA85CB75E5BC88EEC8Large1:
+        m_Texture: {fileID: 2800000, guid: ab56138dc7291694c9baa814049ad420, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Water_previewjpgC878A5E2B8445CA85CB75E5BC88EEC8Large2:
         m_Texture: {fileID: 2800000, guid: ab56138dc7291694c9baa814049ad420, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}

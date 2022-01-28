@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 296ab29ffa8d33a40b560715286fe0eb
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Water0339normal: {fileID: 2800000, guid: e5c670e3d7ed5d24b8397310eb44fdbe, type: 3}
+  - _Water0339: {fileID: 2800000, guid: 7dc40a04650646c43a799d4696fe1178, type: 3}
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

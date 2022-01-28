@@ -2,7 +2,9 @@ fileFormatVersion: 2
 guid: d18edbe58d150364ab6723b1e42c208b
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
+  defaultTextures:
+  - _Water_previewjpgC878A51E2B8445CA85CB75E5BC88EEC8Large: {fileID: 2800000, guid: ab56138dc7291694c9baa814049ad420, type: 3}
+  - _Water_previewjpgC878A51E2B8445CA85CB75E5BC88EEC8Large1: {fileID: 2800000, guid: ab56138dc7291694c9baa814049ad420, type: 3}
   nonModifiableTextures: []
   preprocessorOverride: 0
   userData: 
