@@ -15,7 +15,7 @@ namespace GSGD2.UI
         {
             if (_teleporter != null)
             {
-                _teleporter.TeleportToDestination(_teleporter.TeleportDestination);
+                //_teleporter.TeleportToDestination(_teleporter.TeleportDestination);
                 SetActive(false);
                 LevelReferences.Instance.PlayerReferences.TryGetPlayerControllerDeactivator(out _playerControllerDeactivator);
             }

@@ -14,11 +14,11 @@ namespace GSGD2.Gameplay
 
         public Vector3 TeleportDestination => _teleporterDestination;
 
-        public void TeleportToDestination(Vector3 destination)
+        public void TeleportToDestination(Collider destination)
         {
             var player = LevelReferences.Instance.Player;
 
-            player.transform.position = destination;
+            player.transform.position = destination.transform.position;
         }
 
         public void SetTeleporter()
