@@ -22,9 +22,9 @@ namespace GSGD2.UI
             gameObject.SetActive(false);
         }
 
-        public void ShowMenu()
+        public void RestrictControls()
         {
-            gameObject.SetActive(true);
+            //gameObject.SetActive(true);
 
             if (_playerControllerDeactivator && _doRestrictControls == true)
             {
@@ -32,9 +32,9 @@ namespace GSGD2.UI
             }
         }
 
-        public void HideMenu()
+        public void EnableControls()
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
 
             if (_playerControllerDeactivator && _doRestrictControls == true)
             {

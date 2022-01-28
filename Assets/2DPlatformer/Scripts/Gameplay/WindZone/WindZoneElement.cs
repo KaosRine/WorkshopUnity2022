@@ -36,6 +36,7 @@ namespace GSGD2.Gameplay
                 _rigidbody = other.GetComponentInParent<Rigidbody>();
                 _rigidbody.AddForce(Vector3.up, ForceMode.Impulse);
                 _rigidbody.AddForce(Vector3.up * _force, ForceMode.Acceleration);
+                Mathf.Clamp(_rigidbody.velocity.y, 0, 50);
             }
         }
     }

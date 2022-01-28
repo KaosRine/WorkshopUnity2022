@@ -26,7 +26,7 @@ namespace GSGD2.Player
 		[SerializeField] private PlayerDamageable _playerDamageable = null;
 		[SerializeField] private PlayerDamageFeedbackHandler _playerDamageFeedbackHandler = null;
 		[SerializeField] private CameraAimController _cameraAimController = null;
-		[SerializeField] private PlayerControllerDeactivator _playerControllerActivator = null;
+		[SerializeField] private PlayerControllerDeactivator _playerControllerDeactivator = null;
 		[SerializeField] private PeltInventory _peltInventory = null;
 		[SerializeField] private PeltManager _peltManager = null;
 
@@ -134,7 +134,7 @@ namespace GSGD2.Player
 
 		public bool TryGetPlayerControllerDeactivator(out PlayerControllerDeactivator playerControllerDeactivator)
         {
-			playerControllerDeactivator = _playerControllerActivator;
+			playerControllerDeactivator = _playerControllerDeactivator;
 			return playerControllerDeactivator != null;
         }
 

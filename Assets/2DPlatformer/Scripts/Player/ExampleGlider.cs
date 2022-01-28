@@ -9,7 +9,6 @@ namespace GSGD2.Player
         [SerializeField]
         private PlayerReferences _playerReferences = null;
 
-
         [SerializeField]
         private float _speedWhileInAir = 5f;
 
@@ -60,6 +59,7 @@ namespace GSGD2.Player
                 _isGliding = true;
                 _cubeController.EnableJump(false);
                 _cubeController.ChangeState(CubeController.State.None);
+                _rigidbody.velocity = Vector3.zero;
                 Debug.Log("Gliding");
             }
         }

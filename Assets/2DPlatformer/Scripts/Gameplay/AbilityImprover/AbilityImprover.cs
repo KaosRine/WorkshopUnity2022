@@ -20,7 +20,7 @@ namespace GSGD2.Gameplay
 
         private void Awake()
         {
-            _abilityImproverMenu.HideMenu();
+            _abilityImproverMenu.EnableControls();
         }
 
         public void EnterAbilityImproverTrigger()
@@ -43,7 +43,7 @@ namespace GSGD2.Gameplay
 
         private void AbilityImproverInteractionInputActionPerformed(InputAction.CallbackContext obj)
         {
-            _abilityImproverMenu.ShowMenu();
+            _abilityImproverMenu.RestrictControls();
         }
     }
 }
