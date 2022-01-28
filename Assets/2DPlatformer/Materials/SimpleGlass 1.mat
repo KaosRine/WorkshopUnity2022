@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SimpleGlass
+  m_Name: SimpleGlass 1
   m_Shader: {fileID: 4800000, guid: b674fda82b7dcf642a381a24976138ea, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 5
@@ -123,7 +123,7 @@ Material:
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.079182625, b: 1, a: 0.222}
+    - _Color: {r: 0, g: 0.07843113, b: 1, a: 0.222}
     - _Color0: {r: 0.48870027, g: 0.6490604, b: 0.9632353, a: 0.478}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _UVOffset0: {r: 0.1, g: 0.1, b: 0.1, a: 0}
