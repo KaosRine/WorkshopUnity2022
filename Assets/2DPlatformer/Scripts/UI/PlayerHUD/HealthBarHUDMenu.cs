@@ -6,10 +6,10 @@ namespace GSGD2.UI
 	using UnityEngine;
 	using UnityEngine.UI;
 
-	/// <summary>
-	/// Subsystem that handle the player health bar. It seek player <see cref="Damageable"/>, listen to its <see cref="Damageable.DamageTaken"/>  and <see cref="Damageable.HealthRestored"\> event and react accordingly.
-	/// </summary>
-	public class HealthBarHUDMenu : MonoBehaviour
+    /// <summary>
+    /// Subsystem that handle the player health bar. It seek player <see cref="Gameplay.Damageable"/>, listen to its <see cref="Damageable.DamageTaken"/>  and <see cref="Damageable.HealthRestored"\> event and react accordingly.
+    /// </summary>
+    public class HealthBarHUDMenu : MonoBehaviour
 	{
 		[SerializeField]
 		private Image _healthbarForeground = null;
@@ -29,16 +29,18 @@ namespace GSGD2.UI
 				_damageable.DamageTaken += Damageable_OnHealthChanged;
 				_damageable.HealthRestored -= Damageable_OnHealthChanged;
 				_damageable.HealthRestored += Damageable_OnHealthChanged;
-
+                _damageable.MaxHealthAdded -= Damageable_OnHealthChanged;
+                _damageable.MaxHealthAdded += Damageable_OnHealthChanged;
 			}
 		}
 
-		private void OnDisable()
+        private void OnDisable()
 		{
 			if (_damageable != null)
 			{
 				_damageable.DamageTaken -= Damageable_OnHealthChanged;
 				_damageable.HealthRestored -= Damageable_OnHealthChanged;
+                _damageable.MaxHealthAdded -= Damageable_OnHealthChanged;
 			}
 		}
 
