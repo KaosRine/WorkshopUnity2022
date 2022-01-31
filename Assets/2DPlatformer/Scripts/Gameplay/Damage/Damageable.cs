@@ -81,6 +81,7 @@ namespace GSGD2.Gameplay
 		public event DamageableEvent DamageTaken = null;
 		public event DamageableEvent DamageTakenAndHealthBelowZero = null;
 		public event DamageableEvent HealthRestored = null;
+		public event DamageableEvent MaxHealthAdded = null;
 
 		public UnityEvent<Damageable, DamageableArgs> DamageTaken_UnityEvent = null;
 		public UnityEvent<Damageable, DamageableArgs> HealthRestored_UnityEvent = null;
@@ -147,6 +148,12 @@ namespace GSGD2.Gameplay
 			HealthRestored?.Invoke(this, GetArgs(null, healthPoint));
 			return true;
 		}
+
+		public void AddMaxHealth(int healthToAdd)
+        {
+			maxHealth += healthToAdd;
+			MaxHealthAdded?.Invoke(this, GetArgs(null, healthToAdd));
+        }
 
 		protected virtual bool CanTakeDamage(Damage damage)
 		{
