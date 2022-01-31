@@ -29,6 +29,7 @@ namespace GSGD2.Player
 		[SerializeField] private PlayerControllerDeactivator _playerControllerDeactivator = null;
 		[SerializeField] private PeltInventory _peltInventory = null;
 		[SerializeField] private PeltManager _peltManager = null;
+		[SerializeField] private PlayerMeleeAttack _playerMeleeAttack = null;
 
 		public bool TryGetRigidbody(out Rigidbody rigidbody)
 		{
@@ -148,6 +149,12 @@ namespace GSGD2.Player
         {
 			peltManager = _peltManager;
 			return peltManager != null;
+        }
+
+		public bool TryGetPlayerMeleeAttack(out PlayerMeleeAttack playerMeleeAttack)
+        {
+			playerMeleeAttack = _playerMeleeAttack;
+			return playerMeleeAttack != null;
         }
 	}
 }

@@ -103,19 +103,22 @@ namespace GSGD2.Gameplay
 		private void OnTriggerEventEnter(PhysicsTriggerEvent physicsTriggerEvent, Collider other)
 		{
 			var concreteOther = other.GetComponentInParent<Damageable>();
-			if (concreteOther != null && ReferenceEquals(concreteOther.gameObject, this.gameObject) == false && _damageablesInRange.Contains(concreteOther) == false)
+			if (other.GetComponentInParent<DamageMeleeAttack>() == false)
 			{
-				if (CanGiveDamage(concreteOther) == false || IsInstigator(other.GetComponentInParent<IDamageInstigator>()) == true)
+				if (concreteOther != null && ReferenceEquals(concreteOther.gameObject, this.gameObject) == false && _damageablesInRange.Contains(concreteOther) == false)
 				{
-					return;
-				}
+					if (CanGiveDamage(concreteOther) == false || IsInstigator(other.GetComponentInParent<IDamageInstigator>()) == true)
+					{
+						return;
+					}
 
-				_damageablesInRange.Add(concreteOther);
-				GiveDamage(concreteOther);
+					_damageablesInRange.Add(concreteOther);
+					GiveDamage(concreteOther);
 
-				if (_giveDOT == true && concreteOther.IsReceiveDOT == true)
-				{
-					concreteOther.StartDamageOnTime(_DOTRate, _DOTDamage);
+					if (_giveDOT == true && concreteOther.IsReceiveDOT == true)
+					{
+						concreteOther.StartDamageOnTime(_DOTRate, _DOTDamage);
+					}
 				}
 			}
 		}

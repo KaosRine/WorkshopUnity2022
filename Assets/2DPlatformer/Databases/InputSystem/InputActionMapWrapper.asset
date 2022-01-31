@@ -145,6 +145,14 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: MeleeAttack
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: a69db796-486a-4476-b007-66e74913e553
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: b82491d4-813d-4be0-bea8-2217def02fb7
@@ -395,8 +403,24 @@ MonoBehaviour:
       m_Action: Glide
       m_Flags: 0
     - m_Name: 
+      m_Id: e4916b4a-75a4-4a07-b242-30b15e8befee
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Glide
+      m_Flags: 0
+    - m_Name: 
       m_Id: d74d03a3-1ce6-42e6-95e5-6d749eea8afe
       m_Path: <Mouse>/rightButton
+      m_Interactions: Press(behavior=1)
+      m_Processors: 
+      m_Groups: 
+      m_Action: StopGlide
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 7be2be5a-335c-467b-b2e3-4b5b042028fc
+      m_Path: <Keyboard>/space
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
@@ -417,4 +441,12 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: SwitchPelt
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 8df78a1e-0dff-4446-a704-b50e59078a48
+      m_Path: <Keyboard>/f
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: MeleeAttack
       m_Flags: 0
