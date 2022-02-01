@@ -21,13 +21,13 @@ namespace GSGD2.UI
 
         public void EquipPelt(Sprite image)
         {
-            Image[] slots = _peltInventoryMenu.EquipSlots;
+            PeltSlot[] slots = _peltInventoryMenu.EquipSlots;
             foreach (var slot in slots)
             {
-                if (slot.sprite == null)
+                if (slot.PeltAssigned == null)
                 {
-                    slot.sprite = image;
-                    slot.color = new Color(255, 255, 255, 1);
+                    //slot.sprite = image;
+                    //slot.color = new Color(255, 255, 255, 1);
                     break;
                 }
             }
@@ -36,13 +36,13 @@ namespace GSGD2.UI
 
         public void UnequipPelt(Pelt pelt, Pelt.PeltType peltType)
         {
-            Image[] slots = _peltInventoryMenu.EquipSlots;
+            PeltSlot[] slots = _peltInventoryMenu.EquipSlots;
             foreach (var slot in slots)
             {
-                if (slot.sprite != null && pelt.GetPeltType == peltType)
+                if (slot.PeltAssigned != null && pelt.GetPeltType == peltType)
                 {
-                    slot.sprite = null;
-                    slot.color = new Color(255, 255, 255, 0);
+                    //slot.sprite = null;
+                    //slot.color = new Color(255, 255, 255, 0);
                     break;
                 }
             }

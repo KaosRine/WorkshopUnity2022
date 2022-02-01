@@ -15,11 +15,11 @@ namespace GSGD2.UI
         private Image _squirrelIcon = null;
 
         [SerializeField]
-        private Image[] _equipSlots;
+        private PeltSlot[] _equipSlots;
 
         public Image WolfIcon => _wolfIcon;
         public Image SquirrelIcon => _squirrelIcon;
-        public Image[] EquipSlots => _equipSlots;
+        public PeltSlot[] EquipSlots => _equipSlots;
 
         protected override void Awake()
         {

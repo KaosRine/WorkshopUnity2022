@@ -220,7 +220,7 @@ MonoBehaviour:
       m_Flags: 8
     - m_Name: 
       m_Id: bab2eb58-1a49-48bd-9903-1d741645a34c
-      m_Path: <Keyboard>/space
+      m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -236,7 +236,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: c2d8f9d3-3d38-45a1-a1f4-f5c3c294a49a
-      m_Path: <Keyboard>/leftCtrl
+      m_Path: <Keyboard>/leftShift
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -252,7 +252,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 4f5c77ca-fb78-490e-a132-86ee78cc870c
-      m_Path: <Mouse>/leftButton
+      m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -268,7 +268,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: cf8a1589-ccc6-4482-8b85-bbd5ea13bd64
-      m_Path: <Mouse>/leftButton
+      m_Path: <Keyboard>/space
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
@@ -355,6 +355,30 @@ MonoBehaviour:
       m_Action: HorizontalLook
       m_Flags: 8
     - m_Name: 1D Axis
+      m_Id: fc6522e7-479f-4340-910e-2e995f78484c
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: HorizontalLook
+      m_Flags: 4
+    - m_Name: Negative
+      m_Id: c8a852f6-5016-488c-ac0a-21cb2714751b
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: HorizontalLook
+      m_Flags: 8
+    - m_Name: Positive
+      m_Id: fed2609e-845a-41d4-b902-783100a8a9a0
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: HorizontalLook
+      m_Flags: 8
+    - m_Name: 1D Axis
       m_Id: 0286dd08-f0cd-4971-afea-4233d5c1fb6f
       m_Path: 1DAxis
       m_Interactions: 
@@ -373,6 +397,30 @@ MonoBehaviour:
     - m_Name: Positive
       m_Id: bb2abe0e-fabf-4d1f-9e2c-43393c1b1be4
       m_Path: <Gamepad>/rightStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: VerticalLook
+      m_Flags: 8
+    - m_Name: 1D Axis
+      m_Id: ecc9dab9-17ce-4a79-a26b-627b172728fb
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: VerticalLook
+      m_Flags: 4
+    - m_Name: Negative
+      m_Id: 895a9312-7209-4771-bb15-f4e4150a8c38
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: VerticalLook
+      m_Flags: 8
+    - m_Name: Positive
+      m_Id: 3c73a08d-0d71-40b1-b825-720c922f0738
+      m_Path: <Keyboard>/upArrow
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -411,16 +459,8 @@ MonoBehaviour:
       m_Action: PauseMenu
       m_Flags: 0
     - m_Name: 
-      m_Id: e419ac24-38a8-41cd-a6f9-73e5c56e5462
-      m_Path: <Mouse>/rightButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Glide
-      m_Flags: 0
-    - m_Name: 
       m_Id: e4916b4a-75a4-4a07-b242-30b15e8befee
-      m_Path: <Keyboard>/space
+      m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -435,16 +475,8 @@ MonoBehaviour:
       m_Action: Glide
       m_Flags: 0
     - m_Name: 
-      m_Id: d74d03a3-1ce6-42e6-95e5-6d749eea8afe
-      m_Path: <Mouse>/rightButton
-      m_Interactions: Press(behavior=1)
-      m_Processors: 
-      m_Groups: 
-      m_Action: StopGlide
-      m_Flags: 0
-    - m_Name: 
       m_Id: 7be2be5a-335c-467b-b2e3-4b5b042028fc
-      m_Path: <Keyboard>/space
+      m_Path: <Keyboard>/w
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
@@ -492,7 +524,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 8df78a1e-0dff-4446-a704-b50e59078a48
-      m_Path: <Keyboard>/f
+      m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
