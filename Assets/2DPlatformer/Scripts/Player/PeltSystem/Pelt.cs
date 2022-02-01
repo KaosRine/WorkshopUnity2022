@@ -22,6 +22,7 @@ namespace GSGD2.Player
         private CubeController _cubeController = null;
         private PeltInventory _peltInventory = null;
         private PeltInventoryMenu _peltInventoryMenu = null;
+        private PeltManager _peltManager = null;
 
         public PeltType GetPeltType => _pelt;
 
@@ -29,6 +30,7 @@ namespace GSGD2.Player
         {
             //var player = LevelReferences.Instance.Player;
             LevelReferences.Instance.PlayerReferences.TryGetPeltInventory(out _peltInventory);
+            LevelReferences.Instance.PlayerReferences.TryGetPeltManager(out _peltManager);
             /*_peltInventoryMenu = LevelReferences.Instance.UIManager.PeltInventoryMenu;
 
             switch (_pelt)
@@ -63,6 +65,8 @@ namespace GSGD2.Player
                     break;
             }*/
             _peltInventory.AddPelt(this);
+            _peltManager.EquipPelt(this);
+            Apply();
             return true;
         }
 

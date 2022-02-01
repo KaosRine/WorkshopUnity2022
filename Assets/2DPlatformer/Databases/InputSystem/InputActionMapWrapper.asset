@@ -153,6 +153,14 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: Interact
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: a10b44f8-078f-474c-92a3-4db8b41702f8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: b82491d4-813d-4be0-bea8-2217def02fb7
@@ -212,7 +220,7 @@ MonoBehaviour:
       m_Flags: 8
     - m_Name: 
       m_Id: bab2eb58-1a49-48bd-9903-1d741645a34c
-      m_Path: <Keyboard>/space
+      m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -228,7 +236,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: c2d8f9d3-3d38-45a1-a1f4-f5c3c294a49a
-      m_Path: <Keyboard>/leftCtrl
+      m_Path: <Keyboard>/leftShift
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -244,7 +252,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 4f5c77ca-fb78-490e-a132-86ee78cc870c
-      m_Path: <Mouse>/leftButton
+      m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -252,7 +260,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: f6685742-0816-4912-9c48-d429bb37a1b0
-      m_Path: <Gamepad>/buttonWest
+      m_Path: <Gamepad>/buttonEast
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -260,7 +268,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: cf8a1589-ccc6-4482-8b85-bbd5ea13bd64
-      m_Path: <Mouse>/leftButton
+      m_Path: <Keyboard>/space
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
@@ -268,7 +276,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 1d5cc741-5a6a-4968-a5ef-fbd9f53dfdca
-      m_Path: <Gamepad>/buttonWest
+      m_Path: <Gamepad>/buttonEast
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
@@ -347,6 +355,30 @@ MonoBehaviour:
       m_Action: HorizontalLook
       m_Flags: 8
     - m_Name: 1D Axis
+      m_Id: fc6522e7-479f-4340-910e-2e995f78484c
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: HorizontalLook
+      m_Flags: 4
+    - m_Name: Negative
+      m_Id: c8a852f6-5016-488c-ac0a-21cb2714751b
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: HorizontalLook
+      m_Flags: 8
+    - m_Name: Positive
+      m_Id: fed2609e-845a-41d4-b902-783100a8a9a0
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: HorizontalLook
+      m_Flags: 8
+    - m_Name: 1D Axis
       m_Id: 0286dd08-f0cd-4971-afea-4233d5c1fb6f
       m_Path: 1DAxis
       m_Interactions: 
@@ -365,6 +397,30 @@ MonoBehaviour:
     - m_Name: Positive
       m_Id: bb2abe0e-fabf-4d1f-9e2c-43393c1b1be4
       m_Path: <Gamepad>/rightStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: VerticalLook
+      m_Flags: 8
+    - m_Name: 1D Axis
+      m_Id: ecc9dab9-17ce-4a79-a26b-627b172728fb
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: VerticalLook
+      m_Flags: 4
+    - m_Name: Negative
+      m_Id: 895a9312-7209-4771-bb15-f4e4150a8c38
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: VerticalLook
+      m_Flags: 8
+    - m_Name: Positive
+      m_Id: 3c73a08d-0d71-40b1-b825-720c922f0738
+      m_Path: <Keyboard>/upArrow
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -395,32 +451,40 @@ MonoBehaviour:
       m_Action: PauseMenu
       m_Flags: 0
     - m_Name: 
-      m_Id: e419ac24-38a8-41cd-a6f9-73e5c56e5462
-      m_Path: <Mouse>/rightButton
+      m_Id: a23d591e-0db2-4ab7-9bac-d932a7049793
+      m_Path: <Gamepad>/start
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Glide
+      m_Action: PauseMenu
       m_Flags: 0
     - m_Name: 
       m_Id: e4916b4a-75a4-4a07-b242-30b15e8befee
-      m_Path: <Keyboard>/space
+      m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Glide
       m_Flags: 0
     - m_Name: 
-      m_Id: d74d03a3-1ce6-42e6-95e5-6d749eea8afe
-      m_Path: <Mouse>/rightButton
+      m_Id: 2ad24264-b521-488a-a05c-a90da9688158
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Glide
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 7be2be5a-335c-467b-b2e3-4b5b042028fc
+      m_Path: <Keyboard>/w
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
       m_Action: StopGlide
       m_Flags: 0
     - m_Name: 
-      m_Id: 7be2be5a-335c-467b-b2e3-4b5b042028fc
-      m_Path: <Keyboard>/space
+      m_Id: 730ca839-04fc-4351-8392-0e4aa7cf4596
+      m_Path: <Gamepad>/buttonSouth
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
@@ -435,8 +499,24 @@ MonoBehaviour:
       m_Action: PeltInventory
       m_Flags: 0
     - m_Name: 
+      m_Id: bd524573-dfc4-4546-b980-deef08168bcb
+      m_Path: <Gamepad>/select
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: PeltInventory
+      m_Flags: 0
+    - m_Name: 
       m_Id: 422b81c6-3af3-462d-beec-dee08bdf1ae7
-      m_Path: <Keyboard>/p
+      m_Path: <Keyboard>/tab
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: SwitchPelt
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 327f6f71-6d51-4110-8d86-79394e7291b8
+      m_Path: <Gamepad>/buttonNorth
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -444,9 +524,33 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 8df78a1e-0dff-4446-a704-b50e59078a48
-      m_Path: <Keyboard>/f
+      m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: MeleeAttack
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 78ae441a-33bf-44e8-b071-a43eadd4d97b
+      m_Path: <Gamepad>/buttonWest
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: MeleeAttack
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 78f6ce0e-b9e8-4c09-9ae6-38ec812b4a70
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 587b6bb5-f001-4677-8efa-abc7941f1fa9
+      m_Path: <Gamepad>/dpad/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
       m_Flags: 0
