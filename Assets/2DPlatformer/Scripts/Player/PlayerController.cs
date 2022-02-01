@@ -26,6 +26,8 @@ namespace GSGD2.Player
 		private const string STOP_GLIDE_ACTION_NAME = "StopGlide";
 		private const string PELT_INVENTORY_ACTION_NAME = "PeltInventory";
 		private const string SWITCH_PELT_ACTION_NAME = "SwitchPelt";
+		private const string MELEE_ATTACK_ACTION_NAME = "MeleeAttack";
+		private const string INTERACT_ACTION_NAME = "Interact";
 
 		[SerializeField]
 		private InputActionMapWrapper _inputActionMapWrapper;
@@ -49,6 +51,8 @@ namespace GSGD2.Player
 		private InputAction _stopGlideInputAction = null;
 		private InputAction _peltInventoryInputAction = null;
 		private InputAction _switchPeltInputAction = null;
+		private InputAction _meleeAttackInputAction = null;
+		private InputAction _interactInputAction = null;
 
 		public bool UseMouseForLookDirection => _useMouseForLookDirection;
 		public float HorizontalMove => _horizontalMoveInputAction.ReadValue<float>();
@@ -71,6 +75,8 @@ namespace GSGD2.Player
 		public event InputEvent StopGlidePerformed = null;
 		public event InputEvent PeltInventoryPerformed = null;
 		public event InputEvent SwitchPeltPerformed = null;
+		public event InputEvent MeleeAttackPerformed = null;
+		public event InputEvent InteractPerformed = null;
 
 		private void OnEnable()
 		{
@@ -156,6 +162,18 @@ namespace GSGD2.Player
                 _switchPeltInputAction.performed -= SwitchPeltInputAction_performed;
                 _switchPeltInputAction.performed += SwitchPeltInputAction_performed;
 			}
+
+            if (_inputActionMapWrapper.TryFindAction(MELEE_ATTACK_ACTION_NAME, out _meleeAttackInputAction, true) == true)
+            {
+                _meleeAttackInputAction.performed -= MeleeAttackInputAction_performed;
+                _meleeAttackInputAction.performed += MeleeAttackInputAction_performed;
+			}
+
+            if (_inputActionMapWrapper.TryFindAction(INTERACT_ACTION_NAME, out _interactInputAction, true) == true)
+            {
+                _interactInputAction.performed -= InteractInputAction_performed;
+                _interactInputAction.performed += InteractInputAction_performed;
+			}
 		}
 
         private void OnDisable()
@@ -177,6 +195,8 @@ namespace GSGD2.Player
 			_stopGlideInputAction.Disable();
 			_peltInventoryInputAction.Disable();
 			_switchPeltInputAction.Disable();
+			_meleeAttackInputAction.Disable();
+			_interactInputAction.Disable();
 
 			_jumpInputAction.performed -= JumpInputAction_performed;
 			_dashInputAction.performed -= DashInputAction_performed;
@@ -191,6 +211,8 @@ namespace GSGD2.Player
 			_stopGlideInputAction.performed -= GlideInputAction_performed;
 			_peltInventoryInputAction.performed -= PeltInventoryInputAction_performed;
 			_switchPeltInputAction.performed -= SwitchPeltInputAction_performed;
+			_meleeAttackInputAction.performed -= MeleeAttackInputAction_performed;
+			_interactInputAction.performed -= InteractInputAction_performed;
 		}
 
 		private void JumpInputAction_performed(InputAction.CallbackContext obj)
@@ -255,6 +277,16 @@ namespace GSGD2.Player
         private void SwitchPeltInputAction_performed(InputAction.CallbackContext obj)
         {
 			SwitchPeltPerformed?.Invoke(this, obj);
+        }
+
+        private void MeleeAttackInputAction_performed(InputAction.CallbackContext obj)
+        {
+			MeleeAttackPerformed?.Invoke(this, obj);
+        }
+
+        private void InteractInputAction_performed(InputAction.CallbackContext obj)
+        {
+			InteractPerformed?.Invoke(this, obj);
         }
 	}
 }
