@@ -54,6 +54,7 @@ namespace GSGD2.Gameplay
 
             if (damageable != null && other.gameObject.name == "Trigger.Damage")
             {
+                Debug.Log("Hit");
                 damageable.TakeDamage(_damage);
                 Destroy(this.gameObject);
             }
