@@ -22,7 +22,7 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.064
+    value: 0.082
   fastMode:
     overrideState: 1
     value: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.078
+    value: 0.064
   size:
     overrideState: 1
     value: 0.91
@@ -336,7 +336,7 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 1
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0.81889814, g: 0.7688679, b: 1, a: 1}
   hueShift:
     overrideState: 1
     value: 0
@@ -381,13 +381,13 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.8307384, y: 1, z: 0.8877073, w: -0.06993007}
+    value: {x: 0.8847249, y: 0.9073526, z: 1, w: -0.16783217}
   gamma:
     overrideState: 1
-    value: {x: 0.9897476, y: 1, z: 0.99804693, w: 0}
+    value: {x: 0.94831747, y: 0.9341154, z: 1, w: -0.0000000060438277}
   gain:
     overrideState: 1
-    value: {x: 0.9912435, y: 0.9934332, z: 1, w: 0}
+    value: {x: 0.97628766, y: 1, z: 0.9706282, w: -3.1261177e-10}
   masterCurve:
     overrideState: 0
     value:
@@ -1606,7 +1606,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: -21.3
+    value: -14.1
   intensityX:
     overrideState: 1
     value: 1
@@ -1640,16 +1640,16 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 20
+    value: 400
   aperture:
     overrideState: 1
-    value: 8.6
+    value: 29.6
   focalLength:
     overrideState: 1
-    value: 126
+    value: 2
   kernelSize:
     overrideState: 1
-    value: 1
+    value: 0
 --- !u!114 &7123692945417670362
 MonoBehaviour:
   m_ObjectHideFlags: 3
