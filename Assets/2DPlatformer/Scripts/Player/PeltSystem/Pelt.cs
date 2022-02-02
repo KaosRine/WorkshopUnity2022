@@ -5,6 +5,7 @@ namespace GSGD2.Player
     using UnityEngine;
     using GSGD2.Gameplay;
     using GSGD2.UI;
+    using UnityEngine.UI;
 
     [CreateAssetMenu(menuName = "GameSup/Pelts", fileName = "Pelts")]
     public class Pelt : PickupCommand
@@ -19,17 +20,20 @@ namespace GSGD2.Player
         [SerializeField]
         private PeltType _pelt = 0;
 
+        [SerializeField]
+        private Sprite _icon = null;
+
         private CubeController _cubeController = null;
         private PeltInventory _peltInventory = null;
-        private PeltInventoryMenu _peltInventoryMenu = null;
         private PeltManager _peltManager = null;
 
         public PeltType GetPeltType => _pelt;
+        public Sprite Icon => _icon;
 
         protected override bool ApplyPickup(ICommandSender from)
         {
             //var player = LevelReferences.Instance.Player;
-            LevelReferences.Instance.PlayerReferences.TryGetPeltInventory(out _peltInventory);
+            _peltInventory = LevelReferences.Instance.UIManager.PeltInventory;
             LevelReferences.Instance.PlayerReferences.TryGetPeltManager(out _peltManager);
             /*_peltInventoryMenu = LevelReferences.Instance.UIManager.PeltInventoryMenu;
 
@@ -65,8 +69,8 @@ namespace GSGD2.Player
                     break;
             }*/
             _peltInventory.AddPelt(this);
-            _peltManager.EquipPelt(this);
-            Apply();
+            _peltInventory.EquipPelt(this);
+            //Apply();
             return true;
         }
 

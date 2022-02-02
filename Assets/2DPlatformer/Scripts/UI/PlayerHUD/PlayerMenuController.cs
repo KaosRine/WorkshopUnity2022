@@ -42,7 +42,7 @@ namespace GSGD2.UI
 
         private void PlayerControllerOnPeltInventoryPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            PeltInventoryMenu peltInventory = LevelReferences.Instance.UIManager.PeltInventoryMenu;
+            PeltInventory peltInventory = LevelReferences.Instance.UIManager.PeltInventory;
 
             if (peltInventory.gameObject.activeSelf == true)
             {
