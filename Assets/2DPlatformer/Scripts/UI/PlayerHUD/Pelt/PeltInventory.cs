@@ -77,8 +77,23 @@ namespace GSGD2.UI
             }
             else
             {
-                _peltManager.EquippedPelts.Remove(pelt);
-                OnUnequipPelt?.Invoke(this, pelt);
+                if (_peltManager.EquippedPelts.Count >= 2)
+                {
+                    _peltManager.SwitchPelt();
+                    _peltManager.EquippedPelts.Remove(pelt);
+                    //_peltManager.SetCurrentPelt(_peltManager.EquippedPelts[0]);
+                    _peltManager.EquippedPelts[0].Apply();
+                    OnEquipPelt?.Invoke(this, _peltManager.EquippedPelts[0]);
+                    OnUnequipPelt?.Invoke(this, pelt);
+                }
+                else if (_peltManager.EquippedPelts.Count <= 1)
+                {
+                    pelt.ResetMovementAbilities();
+                    _peltManager.EquippedPelts.Remove(pelt);
+                    _peltManager.SetCurrentPelt(null);
+                    _peltManager.SetPeltMeshes(true, false, false);
+                    OnUnequipPelt?.Invoke(this, pelt);
+                }
             }
         }
     }

@@ -113,15 +113,45 @@ namespace GSGD2.UI
                 var temp = _slot2;
                 ShowSlot(_slot1, temp.Image.sprite);
                 HideSlot(_slot2);
+
+                switch (_slot2.Pelt.GetPeltType)
+                {
+                    case Pelt.PeltType.None:
+                        break;
+                    case Pelt.PeltType.Wolf:
+                        break;
+                    case Pelt.PeltType.Squirrel:
+                        break;
+                    default:
+                        break;
+                }
             }
             else
             {
                 _peltManager.SetCurrentPelt(_slot1.Pelt);
+                switch (_slot1.Pelt.GetPeltType)
+                {
+                    case Pelt.PeltType.None:
+                        break;
+                    case Pelt.PeltType.Wolf:
+                        {
+                            _peltManager.SetPeltMeshes(false, true, false);
+                        }
+                        break;
+                    case Pelt.PeltType.Squirrel:
+                        {
+                            _peltManager.SetPeltMeshes(false, false, true);
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
 
             if (_slot1.Image.sprite == null)
             {
                 _peltManager.SetCurrentPelt(null);
+                _peltManager.SetPeltMeshes(true, false, false);
             }
         }
 
