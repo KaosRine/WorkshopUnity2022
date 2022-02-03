@@ -58,7 +58,6 @@ namespace GSGD2.UI
                 //_slot2.Image.color = new Color(255, 255, 255, 1);
                 _slot2.SetSlotPelt(pelt);
                 ShowSlot(_slot2, pelt.Icon);
-                SwapIcons();
                 _peltManager.SwitchPelt();
             }
             else if (_slot1.Image.sprite != null && _slot2.Image.sprite != null)
