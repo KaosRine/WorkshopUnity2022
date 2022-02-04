@@ -19,12 +19,12 @@ namespace GSGD2.UI
 		private PauseMenu _pauseMenu = null;
 
 		[SerializeField]
-		private PeltInventoryMenu _peltInventoryMenu = null;
+		private PeltInventory _peltInventory = null;
 
 		public Canvas MainCanvas => _mainCanvas;
 		public PlayerHUDMenu PlayerHUD => _playerHUD;
 		public PauseMenu PauseMenu => _pauseMenu;
-		public PeltInventoryMenu PeltInventoryMenu => _peltInventoryMenu;
+		public PeltInventory PeltInventory => _peltInventory;
 
 		public void ShowPlayerHUD(bool isActive)
 		{
@@ -38,7 +38,7 @@ namespace GSGD2.UI
 
 		public void ShowPeltInventoryMenu(bool isActive)
         {
-			_peltInventoryMenu.SetActive(isActive);
+			_peltInventory.SetActive(isActive);
         }
 	}
 }

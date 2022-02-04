@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destroyPickupOnApply: 1
   _pelt: 1
+  _icon: {fileID: 21300000, guid: 4e337eb34207dab41901aefcab65429c, type: 3}

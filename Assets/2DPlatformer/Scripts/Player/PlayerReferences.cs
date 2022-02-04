@@ -27,7 +27,7 @@ namespace GSGD2.Player
 		[SerializeField] private PlayerDamageFeedbackHandler _playerDamageFeedbackHandler = null;
 		[SerializeField] private CameraAimController _cameraAimController = null;
 		[SerializeField] private PlayerControllerDeactivator _playerControllerDeactivator = null;
-		[SerializeField] private PeltInventory _peltInventory = null;
+		//[SerializeField] private PeltInventory _peltInventory = null;
 		[SerializeField] private PeltManager _peltManager = null;
 		[SerializeField] private PlayerMeleeAttack _playerMeleeAttack = null;
 
@@ -139,11 +139,11 @@ namespace GSGD2.Player
 			return playerControllerDeactivator != null;
         }
 
-		public bool TryGetPeltInventory(out PeltInventory peltInventory)
+		/*public bool TryGetPeltInventory(out PeltInventory peltInventory)
         {
 			peltInventory = _peltInventory;
 			return peltInventory != null;
-        }
+        }*/
 
 		public bool TryGetPeltManager(out PeltManager peltManager)
         {

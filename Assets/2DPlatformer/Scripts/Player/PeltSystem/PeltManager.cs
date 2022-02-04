@@ -8,21 +8,22 @@ namespace GSGD2.Player
     public class PeltManager : MonoBehaviour
     {
         [SerializeField]
-        private PeltInventoryManager _peltInventoryManager = null;
-
-        [SerializeField]
         private List<Pelt> _equippedPelts = new List<Pelt>();
 
-        private Pelt _currentPelt = null;
+        [SerializeField]
+        private PeltSlotHUD _peltSlotHUD = null;
 
         private PlayerController _playerController = null;
-        private PeltInventoryMenu _peltInventoryMenu = null;
+        private Pelt _currentPelt = null;
 
+        public List<Pelt> EquippedPelts => _equippedPelts;
         public Pelt CurrentPelt => _currentPelt;
+
+        public delegate void PeltManagerEvent(PeltManager peltManager);
+        public event PeltManagerEvent SwitchPerformed = null;
 
         private void OnEnable()
         {
-            _peltInventoryMenu = LevelReferences.Instance.UIManager.PeltInventoryMenu;
             LevelReferences.Instance.PlayerReferences.TryGetPlayerController(out _playerController);
 
             _playerController.SwitchPeltPerformed -= PlayerControllerOnSwitchPeltPerformed;
@@ -34,64 +35,9 @@ namespace GSGD2.Player
             _playerController.SwitchPeltPerformed -= PlayerControllerOnSwitchPeltPerformed;
         }
 
-        public void EquipPelt(Pelt equippedPelt)
-        {
-            if (IsPeltEquipped(equippedPelt) == false)
-            {
-                _equippedPelts.Add(equippedPelt);
-
-                switch (equippedPelt.GetPeltType)
-                {
-                    case Pelt.PeltType.None:
-                        break;
-                    case Pelt.PeltType.Wolf:
-                        {
-                            _peltInventoryManager.EquipPelt(_peltInventoryMenu.WolfIcon.sprite);
-                        }
-                        break;
-                    case Pelt.PeltType.Squirrel:
-                        {
-                            _peltInventoryManager.EquipPelt(_peltInventoryMenu.SquirrelIcon.sprite);
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            else
-            {
-                _equippedPelts.Remove(equippedPelt);
-
-                switch (equippedPelt.GetPeltType)
-                {
-                    case Pelt.PeltType.None:
-                        break;
-                    case Pelt.PeltType.Wolf:
-                        {
-                            _peltInventoryManager.UnequipPelt(equippedPelt, Pelt.PeltType.Wolf);
-                            equippedPelt.ResetMovementAbilities();
-                        }
-                        break;
-                    case Pelt.PeltType.Squirrel:
-                        {
-                            _peltInventoryManager.UnequipPelt(equippedPelt, Pelt.PeltType.Squirrel);
-                            equippedPelt.ResetMovementAbilities();
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-        private bool IsPeltEquipped(Pelt pelt)
-        {
-            return _equippedPelts.Contains(pelt);
-        }
-
         private void PlayerControllerOnSwitchPeltPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (_equippedPelts.Count == 2)
+            /*if (_equippedPelts.Count == 2)
             {
                 if (_currentPelt == null)
                 {
@@ -113,8 +59,28 @@ namespace GSGD2.Player
             {
                 _currentPelt = _equippedPelts[0];
                 _currentPelt.Apply();
-            }
+            }*/
             Debug.Log(_currentPelt);
+
+            SwitchPelt();
+        }
+
+        public void SwitchPelt()
+        {
+            if (_equippedPelts.Count >= 2)
+            {
+                var temp = _equippedPelts[0];
+                _equippedPelts[0] = _equippedPelts[1];
+                _equippedPelts[1] = temp;
+                _currentPelt = _equippedPelts[0];
+                _currentPelt.Apply();
+                SwitchPerformed?.Invoke(this);
+            }
+        }
+
+        public void SetCurrentPelt(Pelt newPelt)
+        {
+            _currentPelt = newPelt;
         }
     }
 }
