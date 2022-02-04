@@ -220,7 +220,7 @@ MonoBehaviour:
       m_Flags: 8
     - m_Name: 
       m_Id: bab2eb58-1a49-48bd-9903-1d741645a34c
-      m_Path: <Keyboard>/w
+      m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -260,7 +260,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: f6685742-0816-4912-9c48-d429bb37a1b0
-      m_Path: <Gamepad>/buttonEast
+      m_Path: <XInputController>/rightShoulder
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -276,7 +276,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 1d5cc741-5a6a-4968-a5ef-fbd9f53dfdca
-      m_Path: <Gamepad>/buttonEast
+      m_Path: <XInputController>/rightShoulder
       m_Interactions: Press(behavior=1)
       m_Processors: 
       m_Groups: 
