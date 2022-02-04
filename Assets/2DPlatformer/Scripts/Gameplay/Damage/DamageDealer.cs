@@ -149,6 +149,11 @@ namespace GSGD2.Gameplay
 			_hasGivenDamageThisFrame = false;
 		}
 
+		public void RemoveFromDamageableInRange(Damageable damageable)
+        {
+			_damageablesInRange.Remove(damageable);
+        }
+
 		Transform IDamageInstigator.GetTransform() => transform;
 	}
 }

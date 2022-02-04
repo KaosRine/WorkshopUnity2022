@@ -708,7 +708,7 @@ namespace GSGD2.Player
 				break;
 				default:
 				{
-					LogError("{0}.ChangeState({0}) to an unhandled state.", GetType().Name);
+					LogWarning("{0}.ChangeState({0}) to an unhandled state.", GetType().Name);
 				}
 				break;
 			}
@@ -1313,6 +1313,11 @@ namespace GSGD2.Player
 		private void Log(string message, params object[] args)
 		{
 			Debug.LogFormat(string.Format(LOG_TOKEN, GetType().Name, message), args);
+		}
+
+		private void LogWarning(string message, params object[] args)
+		{
+			Debug.LogWarningFormat(string.Format(LOG_TOKEN, GetType().Name, message), args);
 		}
 
 		private void LogError(string message, params object[] args)

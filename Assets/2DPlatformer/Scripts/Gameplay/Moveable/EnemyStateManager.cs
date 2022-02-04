@@ -3,11 +3,17 @@ namespace GSGD2.Gameplay
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using GSGD2.Player;
 
     public class EnemyStateManager : MonoBehaviour
     {
         [SerializeField]
         private GameObject[] _enemyParts;
+
+        [SerializeField]
+        private DamageDealer _damageDealer = null;
+
+        private PlayerDamageable _playerDamageable = null;
 
         public enum EnemyState
         {
@@ -22,6 +28,11 @@ namespace GSGD2.Gameplay
 
         public delegate void EnemyStateManagerEvent(EnemyStateManager sender, EnemyState state);
         public event EnemyStateManagerEvent StateChanged = null;
+
+        private void Awake()
+        {
+            LevelReferences.Instance.PlayerReferences.TryGetPlayerDamageable(out _playerDamageable);
+        }
 
         public void ChangeState(EnemyState newState)
         {
@@ -59,6 +70,8 @@ namespace GSGD2.Gameplay
                 }
 
             }
+
+            _damageDealer.RemoveFromDamageableInRange(_playerDamageable);
         }
 
         public void DoReviveEnemy()
