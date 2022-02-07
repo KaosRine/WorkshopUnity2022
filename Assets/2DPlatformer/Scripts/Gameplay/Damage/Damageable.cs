@@ -61,9 +61,9 @@ namespace GSGD2.Gameplay
 			public int currentHealth;
 			public int maxHealth;
 			public Damage damage;
-			public int healthRestored;
+			public float healthRestored;
 
-			public DamageableArgs(int currentHealth, int maxHealth, Damage damage, int healthRestored)
+			public DamageableArgs(int currentHealth, int maxHealth, Damage damage, float healthRestored)
 			{
 				this.currentHealth = currentHealth;
 				this.damage = damage;
@@ -87,7 +87,7 @@ namespace GSGD2.Gameplay
 		public UnityEvent<Damageable, DamageableArgs> HealthRestored_UnityEvent = null;
 		public UnityEvent<Damageable, DamageableArgs> DamageTakenAndHealthBelowZero_UnityEvent = null;
 
-		private DamageableArgs GetArgs(Damage damage, int healthRestored)
+		private DamageableArgs GetArgs(Damage damage, float healthRestored)
 		{
 			return new DamageableArgs(_currentHealth, maxHealth, damage, healthRestored);
 		}
@@ -141,7 +141,7 @@ namespace GSGD2.Gameplay
 			return true;
 		}
 
-		public bool RestoreHealth(int healthPoint)
+		public bool RestoreHealth(float healthPoint)
 		{
 			if (enabled == false || _currentHealth >= maxHealth) return false;
 			_currentHealth = Mathf.RoundToInt(Mathf.Clamp(_currentHealth + healthPoint, 0f, maxHealth));

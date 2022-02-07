@@ -15,6 +15,7 @@ namespace GSGD2.Gameplay
             if (LevelReferences.Instance.PlayerReferences.TryGetPlayerDamageable(out PlayerDamageable playerDamageable) == true)
             {
                 playerDamageable.AddMaxHealth(_healthToAdd);
+                playerDamageable.RestoreHealth(playerDamageable.MaxHealth - playerDamageable.CurrentHealth);
                 return true;
             }
             return false;

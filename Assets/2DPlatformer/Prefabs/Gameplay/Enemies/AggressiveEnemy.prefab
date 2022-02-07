@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &5295403230275858263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5295403231263643087
 Transform:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MeshCollider:
   m_GameObject: {fileID: 5295403231263643086}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 5295403231966222659}
   - component: {fileID: 5295403231966222658}
   - component: {fileID: 5295403231966222657}
+  - component: {fileID: 1331773251}
   m_Layer: 0
   m_Name: AggressiveEnemy
   m_TagString: Untagged
@@ -489,11 +490,12 @@ Transform:
   m_GameObject: {fileID: 5295403231966222656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 39.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 5295403231263643087}
   - {fileID: 5295403230275858257}
   - {fileID: 5295403231345281731}
+  - {fileID: 543450652416696487}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -529,7 +531,7 @@ MonoBehaviour:
   displacementEstimationUpdater: {fileID: 0}
   healthAtStart: 1
   maxHealth: 1
-  destroyIfHealthBelowZero: 1
+  destroyIfHealthBelowZero: 0
   recoveryDuration: 1
   showDebug: 0
   _damageOnTime:
@@ -543,9 +545,9 @@ MonoBehaviour:
   DamageTakenAndHealthBelowZero_UnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5295403231966222684}
-        m_TargetAssemblyTypeName: GSGD2.Gameplay.Loot, Assembly-CSharp
-        m_MethodName: InstantiateLoot
+      - m_Target: {fileID: 5295403231966222658}
+        m_TargetAssemblyTypeName: GSGD2.Gameplay.EnemyStateManager, Assembly-CSharp
+        m_MethodName: ChangeStateToDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -630,6 +632,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1538522b91488488c1318881130219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyParts:
+  - {fileID: 5295403231263643086}
+  - {fileID: 5295403230275858262}
+  - {fileID: 5295403231345281730}
+  _damageDealer: {fileID: 5295403231966222659}
 --- !u!114 &5295403231966222657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,3 +651,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _loseSightDistance: 15
+--- !u!114 &1331773251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295403231966222656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3401523eb7fbe24197b7b9b8aa7c7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 2
+  _spawnPoint: {fileID: 0}
+--- !u!1001 &1291650892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5295403231966222680}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+      propertyPath: m_Name
+      value: Enemy_FlyingSpirit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+--- !u!1 &919132148163688989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+  m_PrefabInstance: {fileID: 1291650892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &543450652416696487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 39ad021c485c0a045ba6725cd955c3de, type: 3}
+  m_PrefabInstance: {fileID: 1291650892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1795332951
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148163688989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3aa403047d26cac4188a47f7483792d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
