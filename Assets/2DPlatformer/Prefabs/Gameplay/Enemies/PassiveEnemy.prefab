@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5959707202883500879}
   - component: {fileID: 5959707202883500874}
   - component: {fileID: 5959707202883500873}
+  - component: {fileID: 1701039925}
   m_Layer: 0
   m_Name: PassiveEnemy
   m_TagString: Untagged
@@ -35,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 5959707203114813211}
   - {fileID: 5959707204126875386}
+  - {fileID: 543450652164633852}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _path: {fileID: 0}
   _destinationThreshold: 0.5
-  _speed: 4
+  _speed: 2
 --- !u!114 &5959707202883500877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +72,7 @@ MonoBehaviour:
   displacementEstimationUpdater: {fileID: 0}
   healthAtStart: 1
   maxHealth: 1
-  destroyIfHealthBelowZero: 1
+  destroyIfHealthBelowZero: 0
   recoveryDuration: 1
   showDebug: 0
   _damageOnTime:
@@ -84,9 +86,9 @@ MonoBehaviour:
   DamageTakenAndHealthBelowZero_UnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5959707202883500879}
-        m_TargetAssemblyTypeName: GSGD2.Gameplay.Loot, Assembly-CSharp
-        m_MethodName: InstantiateLoot
+      - m_Target: {fileID: 5959707202883500873}
+        m_TargetAssemblyTypeName: GSGD2.Gameplay.EnemyStateManager, Assembly-CSharp
+        m_MethodName: ChangeStateToDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -171,6 +173,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1538522b91488488c1318881130219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyParts:
+  - {fileID: 0}
+  - {fileID: 5959707204126875389}
+  _damageDealer: {fileID: 5959707202883500874}
+--- !u!114 &1701039925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959707202883500848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3401523eb7fbe24197b7b9b8aa7c7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBeforeRespawn: 5
+  _spawnPoint: {fileID: 0}
 --- !u!1 &5959707203114813212
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5959707203114813211
 Transform:
   m_ObjectHideFlags: 0
@@ -479,7 +499,7 @@ MeshCollider:
   m_GameObject: {fileID: 5959707203114813212}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -527,8 +547,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.75, z: 0.75}
+  m_Center: {x: 0, y: 0.9, z: 0.1}
 --- !u!114 &5959707204126875388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,3 +570,89 @@ MonoBehaviour:
   _onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &1569149719
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5959707202883500875}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+      propertyPath: m_Name
+      value: Walking_Spirit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+--- !u!1 &919132148442230342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+  m_PrefabInstance: {fileID: 1569149719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &543450652164633852 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b5d3d7d0d12ebe446a73919c980626f8, type: 3}
+  m_PrefabInstance: {fileID: 1569149719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &133808860
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148442230342}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36889a8bcb5b6d540be9781d4b65551f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
