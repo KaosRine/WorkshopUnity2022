@@ -47,19 +47,19 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.42817846, g: 0.041651852, b: 0.6792453, a: 1}
+    value: {r: 0, g: 0, b: 0, a: 1}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.489
+    value: 0.568
   smoothness:
     overrideState: 1
     value: 1
   roundness:
     overrideState: 1
-    value: 0.173
+    value: 0.187
   rounded:
     overrideState: 1
     value: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -153,7 +153,7 @@ MonoBehaviour:
     value: 1.1
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0.109
   clamp:
     overrideState: 1
     value: 65472
@@ -1606,7 +1606,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: -14.1
+    value: -11.5
   intensityX:
     overrideState: 1
     value: 1
@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1643,10 +1643,10 @@ MonoBehaviour:
     value: 400
   aperture:
     overrideState: 1
-    value: 29.6
+    value: 32
   focalLength:
     overrideState: 1
-    value: 2
+    value: 49
   kernelSize:
     overrideState: 1
     value: 0
