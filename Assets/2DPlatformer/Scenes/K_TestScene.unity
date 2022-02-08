@@ -3147,6 +3147,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!137 &428885137 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8495801834279431817, guid: 97ce7ab77cf870640b5de7781be07bfc, type: 3}
+  m_PrefabInstance: {fileID: 237146465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &462350100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,11 +5216,6 @@ MonoBehaviour:
   m_Spacing: {x: 100, y: 100}
   m_Constraint: 2
   m_ConstraintCount: 2
---- !u!23 &799272858 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5663403397889913813, guid: 9a06979518db48045a1589cb4005733e, type: 3}
-  m_PrefabInstance: {fileID: 297663467}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &809257347
 GameObject:
   m_ObjectHideFlags: 0
@@ -5883,6 +5883,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!137 &872920101 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7807754647706172119, guid: 97ce7ab77cf870640b5de7781be07bfc, type: 3}
+  m_PrefabInstance: {fileID: 237146465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &875200225
 GameObject:
   m_ObjectHideFlags: 0
@@ -9294,9 +9299,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _equippedPelts: []
   _peltSlotHUD: {fileID: 960423102}
-  _defaultHood: {fileID: 1641068548}
-  _wolfPelt: {fileID: 2110154882}
-  _squirrelPelt: {fileID: 799272858}
+  _defaultHood: {fileID: 428885137}
+  _wolfPelt: {fileID: 2040498157}
+  _squirrelPelt: {fileID: 872920101}
 --- !u!114 &1545019078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9532,11 +9537,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!23 &1641068548 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -3511187580745496231, guid: 9a06979518db48045a1589cb4005733e, type: 3}
-  m_PrefabInstance: {fileID: 297663467}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1642130549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2333219543291543005, guid: 86538c642fd721c45be407e2ef3922a0, type: 3}
@@ -11353,6 +11353,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!137 &2040498157 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -8983124155274693871, guid: 97ce7ab77cf870640b5de7781be07bfc, type: 3}
+  m_PrefabInstance: {fileID: 237146465}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2109854116
 GameObject:
   m_ObjectHideFlags: 0
@@ -11489,11 +11494,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109854116}
   m_CullTransparentMesh: 1
---- !u!23 &2110154882 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 8231677815347385356, guid: 9a06979518db48045a1589cb4005733e, type: 3}
-  m_PrefabInstance: {fileID: 297663467}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2138408796
 GameObject:
   m_ObjectHideFlags: 0

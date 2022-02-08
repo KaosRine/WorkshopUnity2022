@@ -14,13 +14,13 @@ namespace GSGD2.Player
         private PeltSlotHUD _peltSlotHUD = null;
 
         [SerializeField]
-        private MeshRenderer _defaultHood = null;
+        private SkinnedMeshRenderer _defaultHood = null;
 
         [SerializeField]
-        private MeshRenderer _wolfPelt = null;
+        private SkinnedMeshRenderer _wolfPelt = null;
 
         [SerializeField]
-        private MeshRenderer _squirrelPelt = null;
+        private SkinnedMeshRenderer _squirrelPelt = null;
 
         private PlayerController _playerController = null;
         private PeltInventory _peltInventory = null;

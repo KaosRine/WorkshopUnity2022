@@ -71,6 +71,9 @@ namespace GSGD2.Player
                 case CubeController.State.Bumping:
                     break;
                 case CubeController.State.StartJump:
+                    {
+                        _animator.SetTrigger("Jumping");
+                    }
                     break;
                 case CubeController.State.Jumping:
                     break;
@@ -103,6 +106,7 @@ namespace GSGD2.Player
 
         private void PlayerControllerOnMeleeAttackPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
+            _animator.SetTrigger("MeleeAttack");
         }
 
         private void Update()
