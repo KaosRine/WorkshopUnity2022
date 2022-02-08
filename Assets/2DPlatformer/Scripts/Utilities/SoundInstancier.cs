@@ -14,7 +14,7 @@ namespace GSGD2.Utilities
 
         public void PlayRandomSound()
         {
-            AudioClip sound = _audioClips[(Random.Range(0, _audioClips.Length))];
+            AudioClip sound = _audioClips[Random.Range(0, _audioClips.Length)];
             _audioSource.clip = sound;
             _audioSource.Play();
         }

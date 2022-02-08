@@ -79,6 +79,7 @@ namespace GSGD2.Player
             AudioSource instance = Instantiate<AudioSource>(_audioSource);
             instance.clip = _audioClip;
             instance.Play();
+            Destroy(instance.gameObject, _audioClip.length);
             //Apply();
             return true;
         }
