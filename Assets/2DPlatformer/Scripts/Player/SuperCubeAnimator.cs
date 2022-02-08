@@ -18,6 +18,7 @@ namespace GSGD2.Player
         private Animator _animator = null;
         private Rigidbody _rigidbody = null;
         private DisplacementEstimationUpdater _displacementEstimationUpdater = null;
+        private PlayerController _playerController = null;
 
         private void Awake()
         {
@@ -25,18 +26,23 @@ namespace GSGD2.Player
             _playerReferences.TryGetAnimator(out _animator);
             _playerReferences.TryGetRigidbody(out _rigidbody);
             _playerReferences.TryGetDisplacementEstimationUpdater(out _displacementEstimationUpdater);
+            _playerReferences.TryGetPlayerController(out _playerController);
         }
 
         private void OnEnable()
         {
             _cubeController.StateChanged -= OnCubeControllerStateChanged;
             _cubeController.StateChanged += OnCubeControllerStateChanged;
+
+            _playerController.MeleeAttackPerformed -= PlayerControllerOnMeleeAttackPerformed;
+            _playerController.MeleeAttackPerformed += PlayerControllerOnMeleeAttackPerformed;
         }
 
 
         private void OnDisable()
         {
             _cubeController.StateChanged -= OnCubeControllerStateChanged;
+            _playerController.MeleeAttackPerformed -= PlayerControllerOnMeleeAttackPerformed;
         }
 
         private void OnCubeControllerStateChanged(CubeController cubeController, CubeController.CubeControllerEventArgs args)
@@ -93,6 +99,10 @@ namespace GSGD2.Player
                 default:
                     break;
             }
+        }
+
+        private void PlayerControllerOnMeleeAttackPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
         }
 
         private void Update()

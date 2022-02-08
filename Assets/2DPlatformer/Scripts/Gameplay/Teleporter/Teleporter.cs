@@ -9,8 +9,8 @@ namespace GSGD2.Gameplay
 
     public class Teleporter : MonoBehaviour
     {
-        [SerializeField]
-        private TeleporterHUDMenu _teleporterMenu = null;
+        //[SerializeField]
+        //private TeleporterHUDMenu _teleporterMenu = null;
 
         private Vector3 _teleporterDestination;
         private Rigidbody _rigidbody = null;
@@ -57,7 +57,7 @@ namespace GSGD2.Gameplay
 
         public void SetTeleporter()
         {
-            _teleporterMenu.GetTeleporter(this);
+            //_teleporterMenu.GetTeleporter(this);
         }
 
         public void GetDestination(Collider destination)

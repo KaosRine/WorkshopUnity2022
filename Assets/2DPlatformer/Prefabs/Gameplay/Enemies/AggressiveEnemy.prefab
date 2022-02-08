@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyParts:
-  - {fileID: 5295403231263643086}
+  - {fileID: 919132148163688989}
   - {fileID: 5295403230275858262}
   - {fileID: 5295403231345281730}
   _damageDealer: {fileID: 5295403231966222659}

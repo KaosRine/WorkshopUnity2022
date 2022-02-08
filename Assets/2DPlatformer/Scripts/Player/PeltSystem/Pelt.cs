@@ -23,6 +23,12 @@ namespace GSGD2.Player
         [SerializeField]
         private Sprite _icon = null;
 
+        [SerializeField]
+        private AudioSource _audioSource = null;
+
+        [SerializeField]
+        private AudioClip _audioClip = null;
+
         private CubeController _cubeController = null;
         private PeltInventory _peltInventory = null;
         private PeltManager _peltManager = null;
@@ -70,6 +76,9 @@ namespace GSGD2.Player
             }*/
             _peltInventory.AddPelt(this);
             _peltInventory.EquipPelt(this);
+            AudioSource instance = Instantiate<AudioSource>(_audioSource);
+            instance.clip = _audioClip;
+            instance.Play();
             //Apply();
             return true;
         }

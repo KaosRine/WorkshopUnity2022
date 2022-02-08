@@ -7,17 +7,16 @@ namespace GSGD2.Utilities
     public class SoundInstancier : MonoBehaviour
     {
         [SerializeField]
-        private AudioSource[] _audioSources;
+        private AudioSource _audioSource = null;
 
-        public void PlaySound(int index)
-        {
-            _audioSources[index].Play();
-        }
+        [SerializeField]
+        private AudioClip[] _audioClips;
 
         public void PlayRandomSound()
         {
-            int random = Random.Range(0, _audioSources.Length);
-            _audioSources[random].Play();
+            AudioClip sound = _audioClips[(Random.Range(0, _audioClips.Length))];
+            _audioSource.clip = sound;
+            _audioSource.Play();
         }
     }
 }
