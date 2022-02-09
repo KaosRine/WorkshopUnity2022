@@ -12,6 +12,9 @@ namespace GSGD2.Gameplay
         //[SerializeField]
         //private TeleporterHUDMenu _teleporterMenu = null;
 
+        [SerializeField]
+        private FadeScreen _fadeScreen = null;
+
         private Vector3 _teleporterDestination;
         private Rigidbody _rigidbody = null;
         private PlayerControllerDeactivator _playerControllerDeactivator = null;
@@ -49,10 +52,11 @@ namespace GSGD2.Gameplay
         {
             var player = LevelReferences.Instance.Player;
 
+            _fadeScreen.FadeIn();
             player.transform.position = destination.transform.position;
             _rigidbody.velocity = Vector3.zero;
             _playerControllerDeactivator.DoDeactivatePlayerController();
-            _timer.Start(0.2f);
+            _timer.Start(2f);
         }
 
         public void SetTeleporter()

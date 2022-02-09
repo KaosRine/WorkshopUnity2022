@@ -19,6 +19,7 @@ namespace GSGD2.Player
         private Rigidbody _rigidbody = null;
         private DisplacementEstimationUpdater _displacementEstimationUpdater = null;
         private PlayerController _playerController = null;
+        private ExampleGlider _glider = null;
 
         private void Awake()
         {
@@ -27,6 +28,7 @@ namespace GSGD2.Player
             _playerReferences.TryGetRigidbody(out _rigidbody);
             _playerReferences.TryGetDisplacementEstimationUpdater(out _displacementEstimationUpdater);
             _playerReferences.TryGetPlayerController(out _playerController);
+            _glider = GetComponent<ExampleGlider>();
         }
 
         private void OnEnable()
@@ -58,7 +60,7 @@ namespace GSGD2.Player
                         var downwardVelocityBelowThreshold = Vector3.Dot(_displacementEstimationUpdater.Velocity, -transform.up) > _endJumpDownwardSpeedThresholdWhenGrounded;
                         if (downwardVelocityBelowThreshold == true)
                         {
-                            _animator.SetTrigger("EndJump");
+                            //_animator.SetTrigger("EndJump");
                         }
                         _animator.SetBool("Falling", false);
                     }
@@ -87,7 +89,7 @@ namespace GSGD2.Player
                 case CubeController.State.WallJump:
                     {
                         _animator.SetBool("WallGrab", false);
-                        _animator.SetTrigger("WallJump");
+                        //_animator.SetTrigger("WallJump");
                     }
                     break;
                 case CubeController.State.Dashing:
@@ -113,6 +115,15 @@ namespace GSGD2.Player
         {
             float value = Mathf.Abs(_rigidbody.velocity.z);
             _animator.SetFloat("IdleRunBlend", value);
+
+            if (_glider.IsGliding == true)
+            {
+                _animator.SetBool("Glide", true);
+            }
+            else
+            {
+                _animator.SetBool("Glide", false);
+            }
         }
     }
 }

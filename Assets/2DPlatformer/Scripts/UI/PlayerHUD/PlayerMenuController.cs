@@ -4,9 +4,19 @@ namespace GSGD2.UI
     using System.Collections.Generic;
     using UnityEngine;
     using GSGD2.Player;
+    using UnityEngine.EventSystems;
 
     public class PlayerMenuController : MonoBehaviour
     {
+        [SerializeField]
+        private EventSystem _eventSystem = null;
+
+        [SerializeField]
+        private GameObject _pauseMenuFirstSelected = null;
+
+        [SerializeField]
+        private GameObject _peltInventoryFirstSelected = null;
+
         private PlayerController _playerController = null;
 
         private void OnEnable()
@@ -36,6 +46,7 @@ namespace GSGD2.UI
             }
             else
             {
+                _eventSystem.SetSelectedGameObject(_pauseMenuFirstSelected);
                 LevelReferences.Instance.UIManager.ShowPauseMenu(true);
             }
         }
@@ -50,6 +61,7 @@ namespace GSGD2.UI
             }
             else
             {
+                _eventSystem.SetSelectedGameObject(_peltInventoryFirstSelected);
                 LevelReferences.Instance.UIManager.ShowPeltInventoryMenu(true);
             }
         }

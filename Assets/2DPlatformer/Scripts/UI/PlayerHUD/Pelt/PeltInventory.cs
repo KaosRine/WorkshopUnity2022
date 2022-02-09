@@ -6,6 +6,7 @@ namespace GSGD2.UI
     using UnityEngine.UI;
     using GSGD2.UI;
     using GSGD2.Player;
+    using UnityEngine.EventSystems;
 
     public class PeltInventory : AMenu
     {
