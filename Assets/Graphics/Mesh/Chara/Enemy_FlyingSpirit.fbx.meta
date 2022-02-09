@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_WalkingSpirit9
+    second: {fileID: 2100000, guid: be35ba03aa9210f4096ac3e911e90692, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
