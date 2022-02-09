@@ -56,7 +56,7 @@ namespace GSGD2.Gameplay
             player.transform.position = destination.transform.position;
             _rigidbody.velocity = Vector3.zero;
             _playerControllerDeactivator.DoDeactivatePlayerController();
-            _timer.Start(2f);
+            _timer.Start(0.2f);
         }
 
         public void SetTeleporter()

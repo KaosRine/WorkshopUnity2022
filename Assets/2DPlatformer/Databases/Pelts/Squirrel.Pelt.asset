@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destroyPickupOnApply: 1
   _pelt: 2
-  _icon: {fileID: 21300000, guid: fab66622905162542b93bb4c0227a773, type: 3}
+  _icon: {fileID: 21300000, guid: c36b4588dab57aa41b94250dda23ca2c, type: 3}
   _audioSource: {fileID: 1220959508420066561, guid: 2c3cffbc08282ec4db20e46ababe8f01, type: 3}
   _audioClip: {fileID: 8300000, guid: 38c6267104ee22d4c80db29f7e952341, type: 3}
