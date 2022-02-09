@@ -52,7 +52,7 @@ namespace GSGD2.Gameplay
         {
             var player = LevelReferences.Instance.Player;
 
-            _fadeScreen.FadeIn();
+            //_fadeScreen.FadeIn();
             player.transform.position = destination.transform.position;
             _rigidbody.velocity = Vector3.zero;
             _playerControllerDeactivator.DoDeactivatePlayerController();

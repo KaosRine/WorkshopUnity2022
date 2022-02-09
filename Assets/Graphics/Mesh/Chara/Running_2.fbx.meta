@@ -6,7 +6,27 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CharaLittleHood
+    second: {fileID: 2100000, guid: bca13dfb627a2384c80e324f311ef6e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CharaPeltRed
+    second: {fileID: 2100000, guid: 089cfc20ed519d24bb3d30cea7e39455, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CharaPeltSquirrel
+    second: {fileID: 2100000, guid: 9dd2f4513efaf33498d3eb72924f1b8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CharaPeltWolf
+    second: {fileID: 2100000, guid: 5390bc21df53c2e44939f60e66ed5b5b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
