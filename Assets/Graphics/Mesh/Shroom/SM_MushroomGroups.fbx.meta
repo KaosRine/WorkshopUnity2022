@@ -3,7 +3,12 @@ guid: 3560e51928bf69b4497c3b79a56d2e88
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MushroomGroups
+    second: {fileID: 2100000, guid: c9e288e84b97b6f40a36fc99ca2a38e1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
