@@ -340,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 7366418446322525659, guid: 6cbb0c0706936c04e89dbd6ba2fa6952, type: 3}
       propertyPath: _eventSystem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 112315930}
     - target: {fileID: 7366418446360809486, guid: 6cbb0c0706936c04e89dbd6ba2fa6952, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
