@@ -161,6 +161,14 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: Map
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: d3ca8a48-11fc-46a6-b2df-dd497cc05296
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: b82491d4-813d-4be0-bea8-2217def02fb7
@@ -553,4 +561,20 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: Interact
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 7a8e8bac-e973-4e08-b581-8c81f944ccbf
+      m_Path: <Gamepad>/dpad/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Map
+      m_Flags: 0
+    - m_Name: 
+      m_Id: f31bfc1f-0965-40a8-a888-2a7169863eea
+      m_Path: <Keyboard>/m
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Map
       m_Flags: 0

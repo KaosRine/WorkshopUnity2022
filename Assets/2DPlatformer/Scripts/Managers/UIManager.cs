@@ -3,6 +3,7 @@ namespace GSGD2.UI
 	using System.Collections;
 	using System.Collections.Generic;
 	using UnityEngine;
+	using UnityEngine.UI;
 
 	/// <summary>
 	/// Manager class that handle global functionnality around UI. It is a proxy to UI subsystem and can enable or disable them.
@@ -21,10 +22,14 @@ namespace GSGD2.UI
 		[SerializeField]
 		private PeltInventory _peltInventory = null;
 
+		[SerializeField]
+		private Map _map = null;
+
 		public Canvas MainCanvas => _mainCanvas;
 		public PlayerHUDMenu PlayerHUD => _playerHUD;
 		public PauseMenu PauseMenu => _pauseMenu;
 		public PeltInventory PeltInventory => _peltInventory;
+		public Map Map => _map;
 
 		public void ShowPlayerHUD(bool isActive)
 		{
@@ -39,6 +44,11 @@ namespace GSGD2.UI
 		public void ShowPeltInventoryMenu(bool isActive)
         {
 			_peltInventory.SetActive(isActive);
+        }
+
+		public void ShowMap(bool isActive)
+        {
+			_map.SetActive(isActive);
         }
 	}
 }

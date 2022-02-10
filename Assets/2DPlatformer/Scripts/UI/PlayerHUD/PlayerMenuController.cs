@@ -28,6 +28,9 @@ namespace GSGD2.UI
 
             _playerController.PauseMenuPerformed += PlayerControllerOnPauseMenuPerformed;
             _playerController.PeltInventoryPerformed += PlayerControllerOnPeltInventoryPerformed;
+
+            _playerController.MapPerformed -= PlayerControllerOnMapPerformed;
+            _playerController.MapPerformed += PlayerControllerOnMapPerformed;
         }
 
         private void OnDisable()
@@ -63,6 +66,20 @@ namespace GSGD2.UI
             {
                 _eventSystem.SetSelectedGameObject(_peltInventoryFirstSelected);
                 LevelReferences.Instance.UIManager.ShowPeltInventoryMenu(true);
+            }
+        }
+
+        private void PlayerControllerOnMapPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            Map map = LevelReferences.Instance.UIManager.Map;
+
+            if (map.gameObject.activeSelf == true)
+            {
+                LevelReferences.Instance.UIManager.ShowMap(false);
+            }
+            else
+            {
+                LevelReferences.Instance.UIManager.ShowMap(true);
             }
         }
     }

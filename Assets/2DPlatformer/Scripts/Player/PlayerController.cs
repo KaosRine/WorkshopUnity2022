@@ -28,6 +28,7 @@ namespace GSGD2.Player
 		private const string SWITCH_PELT_ACTION_NAME = "SwitchPelt";
 		private const string MELEE_ATTACK_ACTION_NAME = "MeleeAttack";
 		private const string INTERACT_ACTION_NAME = "Interact";
+		private const string MAP_ACTION_NAME = "Map";
 
 		[SerializeField]
 		private InputActionMapWrapper _inputActionMapWrapper;
@@ -53,6 +54,7 @@ namespace GSGD2.Player
 		private InputAction _switchPeltInputAction = null;
 		private InputAction _meleeAttackInputAction = null;
 		private InputAction _interactInputAction = null;
+		private InputAction _mapInputAction = null;
 
 		public bool UseMouseForLookDirection => _useMouseForLookDirection;
 		public float HorizontalMove => _horizontalMoveInputAction.ReadValue<float>();
@@ -77,6 +79,7 @@ namespace GSGD2.Player
 		public event InputEvent SwitchPeltPerformed = null;
 		public event InputEvent MeleeAttackPerformed = null;
 		public event InputEvent InteractPerformed = null;
+		public event InputEvent MapPerformed = null;
 
 		private void OnEnable()
 		{
@@ -174,7 +177,14 @@ namespace GSGD2.Player
                 _interactInputAction.performed -= InteractInputAction_performed;
                 _interactInputAction.performed += InteractInputAction_performed;
 			}
+
+            if (_inputActionMapWrapper.TryFindAction(MAP_ACTION_NAME, out _mapInputAction, true) == true)
+            {
+                _mapInputAction.performed -= MapInputAction_performed;
+                _mapInputAction.performed += MapInputAction_performed;
+            }
 		}
+
 
         private void OnDisable()
 		{
@@ -197,6 +207,7 @@ namespace GSGD2.Player
 			_switchPeltInputAction.Disable();
 			_meleeAttackInputAction.Disable();
 			_interactInputAction.Disable();
+			_mapInputAction.Disable();
 
 			_jumpInputAction.performed -= JumpInputAction_performed;
 			_dashInputAction.performed -= DashInputAction_performed;
@@ -213,6 +224,7 @@ namespace GSGD2.Player
 			_switchPeltInputAction.performed -= SwitchPeltInputAction_performed;
 			_meleeAttackInputAction.performed -= MeleeAttackInputAction_performed;
 			_interactInputAction.performed -= InteractInputAction_performed;
+			_mapInputAction.performed -= MapInputAction_performed;
 		}
 
 		private void JumpInputAction_performed(InputAction.CallbackContext obj)
@@ -287,6 +299,11 @@ namespace GSGD2.Player
         private void InteractInputAction_performed(InputAction.CallbackContext obj)
         {
 			InteractPerformed?.Invoke(this, obj);
+        }
+
+        private void MapInputAction_performed(InputAction.CallbackContext obj)
+        {
+			MapPerformed?.Invoke(this, obj);
         }
 	}
 }
