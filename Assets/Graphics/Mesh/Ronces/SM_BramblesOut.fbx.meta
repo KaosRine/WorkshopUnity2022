@@ -3,7 +3,12 @@ guid: e1d05a456e2e18e449a78e46f6258aa9
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_BramblesOut
+    second: {fileID: 2100000, guid: f4e123dcbb76aaa41af50941e3fb2529, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
