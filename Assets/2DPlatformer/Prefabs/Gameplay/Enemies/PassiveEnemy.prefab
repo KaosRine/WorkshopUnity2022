@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyParts:
-  - {fileID: 0}
+  - {fileID: 2314414219063734271}
   - {fileID: 5959707204126875389}
   _damageDealer: {fileID: 5959707202883500874}
 --- !u!114 &1701039925
