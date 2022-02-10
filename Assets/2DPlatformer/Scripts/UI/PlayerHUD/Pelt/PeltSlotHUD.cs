@@ -62,7 +62,6 @@ namespace GSGD2.UI
             }
             else if (_slot1.Image.sprite != null && _slot2.Image.sprite != null)
             {
-                Debug.Log("Cannot equip");
             }
         }
         private void PeltInventoryOnUnequipPelt(PeltInventory sender, Pelt pelt)
@@ -73,13 +72,13 @@ namespace GSGD2.UI
                     break;
                 case Pelt.PeltType.Wolf:
                     {
-                        if (_slot1.Image.sprite != null && _slot1.Image.sprite.name == "Wolf_Icon")
+                        if (_slot1.Image.sprite != null && _slot1.Image.sprite.name == "Wolf_Icon_Final")
                         {
                             //_slot1.Image.sprite = null;
                             //_slot1.Image.color = new Color(255, 255, 255, 0);
                             HideSlot(_slot1);
                         }
-                        else if (_slot2.Image.sprite != null && _slot2.Image.sprite.name == "Wolf_Icon")
+                        else if (_slot2.Image.sprite != null && _slot2.Image.sprite.name == "Wolf_Icon_Final")
                         {
                             //_slot2.Image.sprite = null;
                             //_slot2.Image.color = new Color(255, 255, 255, 0);
@@ -89,13 +88,13 @@ namespace GSGD2.UI
                     break;
                 case Pelt.PeltType.Squirrel:
                     {
-                        if (_slot1.Image.sprite != null && _slot1.Image.sprite.name == "Squirrel_Icon")
+                        if (_slot1.Image.sprite != null && _slot1.Image.sprite.name == "Squirrel_Icon_Final")
                         {
                             //_slot1.Image.sprite = null;
                             //_slot1.Image.color = new Color(255, 255, 255, 0);
                             HideSlot(_slot1);
                         }
-                        else if (_slot2.Image.sprite != null && _slot2.Image.sprite.name == "Squirrel_Icon")
+                        else if (_slot2.Image.sprite != null && _slot2.Image.sprite.name == "Squirrel_Icon_Final")
                         {
                             //_slot2.Image.sprite = null;
                             //_slot2.Image.color = new Color(255, 255, 255, 0);
